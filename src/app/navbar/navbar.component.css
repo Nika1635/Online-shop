@@ -1,0 +1,135 @@
+nav{
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 2;
+
+}
+
+#mainName{
+    font-size: 40px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.top{
+    display: flex;
+    height: 75px;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 70px;
+}
+
+.top > div{
+    display: flex;
+    gap: 30px;
+}
+
+.navigation > li{
+    cursor: pointer;
+    transition: 0.5s;
+
+}
+
+.navigation > li:hover{
+    color: blueviolet;
+}
+
+.login{
+    display: flex;
+    gap: 5px;
+    font-weight: 300;
+}
+
+.fa-user{
+    border-radius: 100%;    
+}
+
+.navigation{
+    display: flex;
+    list-style-type: none;
+    gap: 20px;
+    color: black;
+    text-decoration: none;
+}
+
+.navigation a{
+    list-style-type: none;
+    color: black;
+    text-decoration: none;
+}
+
+
+.responsive{
+    padding-top: 20px;
+    z-index: 2;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    right: -200px;
+    top: 70px;
+    background-color: white;
+    height: 100vh;
+    width: 200px;
+    align-items: center;
+    text-align: center;
+    transition: 0.5s;
+}
+
+.responsive > div{
+    display: flex;
+    gap: 10px;
+}
+
+.responsive #navigation{
+    display: flex;
+    flex-direction: column;
+}
+
+.show{
+    right: -200px;
+}
+
+.none{
+    right: -200px;
+}
+
+.burgerbar{
+    display: none !important;
+}
+
+@media only screen and (max-width: 760px) {
+    .first{
+        display: none !important;
+    }
+
+    .navigation:nth-child(2){
+        display: none !important;
+    }
+
+    .show{
+        display: flex !important;
+        right: 0;
+    }
+
+    .burgerbar{
+        display: flex !important;
+        font-size: 20px;
+    }
+
+    .navigation{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .top{
+        padding-inline: 30px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    #mainName{
+        font-size: 33px;
+    }
+}

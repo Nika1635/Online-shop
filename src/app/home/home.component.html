@@ -1,0 +1,81 @@
+
+<div class="hero">
+    <section class="indexSection">
+        <p>Best Prices</p>
+        <p>Incredible Prices on All Your Favorite Items</p>
+        <p>Get more for less on selected brands</p>
+        <button routerLink="/products">Shop Now</button>
+    </section>
+</div>
+<section class="dealSection">
+    <div class="deals">
+        <div class="dealsHero">
+            <p>Holiday Deals</p>
+            <p>Up to <br>30% off</p>
+            <p>Selected Smartphone Brands </p>
+            <button routerLink="/products">Shop</button>
+        </div>
+    </div>
+    <div class="deals">
+        <div class="dealsHero">
+            <p>Just In</p>
+            <p>Take Your Sound Anywhere</p>
+            <p>Top Headphone Brands</p>
+            <button routerLink="/products">Shop</button>
+        </div>
+    </div>
+</section>
+<section class="information">
+    <div class="informationhero">
+        <div>
+            <i class="fa-solid fa-truck-ramp-box"></i>
+            <p>
+                Curb-side pickup
+            </p>
+        </div>
+        <div>
+            <i class="fa-solid fa-boxes-stacked"></i>
+            <p>
+                Free shipping on orders over $50
+            </p>
+        </div>
+        <div>
+            <i class="fa-solid fa-percent"></i>
+            <p>
+                Low prices guaranteed
+            </p>
+        </div>
+        <div>
+            <i class="fa-solid fa-clock-rotate-left"></i>
+            <p>
+                Available to you 24/7
+            </p>
+        </div>
+    </div>
+</section>
+<section class="slide">
+    <div class="slideHerotop">
+        <div class="slideHero">
+            @for (item of cards.products; track $index) {
+                <div class="gallery-cell centerCard">
+                    <div class="productCard">
+                        <div>
+                            <img class="cardImg" [src]="item.images[0]" alt="">
+                            <p class="cardname">{{item.title}}</p>
+                            <div class="priceBar">
+                                @if (item.price.beforeDiscount > item.price.current) {
+                                    <p class="beforeDiscount">${{item.price.beforeDiscount }}</p>
+                                    <p class="currentPrice">${{item.price.current}}</p>
+                                }
+                                @else {
+                                    <p class="currentPrice">${{item.price.current}}</p>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        <button class="seeall" routerLink="/products">View All</button>
+    </div>
+</section>

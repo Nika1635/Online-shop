@@ -1,0 +1,367 @@
+.indexSection{
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    width: 100%;
+    gap: 20px;
+    margin-left: 10%;
+}
+
+.indexSection > p:nth-child(1){
+    color: white;
+    background-color: #D72D2D;
+    width: 100px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.indexSection > p:nth-child(2){
+    font-size: 40px;
+}
+
+.indexSection > button{
+    background-color: #751FFF;
+    width: 150px;
+    height: 50px;
+    border: 1px solid #751FFF;
+    transition: 0.5s;
+    color: white;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.indexSection > button:hover{
+    background-color: transparent;
+    color: #751FFF;
+    border-radius: 15px;
+}
+
+
+
+.hero{
+    width: 100%;
+    background-color: #E8E8E8;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    animation: images 15s infinite;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 60%;
+}
+
+@keyframes images{
+    0%{
+        background-image: url(/photos/1.jpg);
+      }
+    
+      40%{
+        background-image: url(/photos/2.jpg);
+      }
+    
+      70%{
+        background-image: url(/photos/3.jpg);
+      }
+    
+      100%{
+        background-image: url(/photos/1.jpg);
+      }
+  }
+
+.deals{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 450px;
+    gap: 20px;
+}
+
+.dealsHero{
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    gap: 20px;
+    margin: 50px;
+}
+
+.dealsHero > p:nth-child(1){
+    height: 25px;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+.dealsHero > p:nth-child(2){
+    font-size: 45px;
+    font-weight: 500;
+}
+
+.dealsHero > p:nth-child(3){
+    font-size: 18px;
+}
+
+.dealsHero > p{
+    color: white;
+}
+
+.dealsHero > button{
+    background-color: white;
+    width: 150px;
+    height: 50px;
+    border: 1px solid white;
+    transition: 0.5s;
+    border-radius: 40px;
+    font-size: 14px;
+
+}
+
+.dealsHero > button:hover{
+    background-color: transparent;
+    color: #751FFF;
+    color: white;
+}
+
+.dealSection{
+    display: flex;
+    padding: 50px;
+    gap: 40px;
+    justify-content: space-evenly;
+    background-color: #E8E8E8;
+}
+
+.deals:nth-child(1){
+    background-image: url(/photos/4.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 60%;
+}
+
+.deals:nth-child(2){
+    background-image: url(/photos/5.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 60%;
+}
+
+.information{
+    padding: 0px 50px 50px 50px;
+    background-color: #E8E8E8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.informationhero{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: white;
+    padding: 50px;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.informationhero  div{
+    display: flex;
+    gap: 25px;
+    width: 250px;
+    align-items: center;
+}
+
+.information p{
+    font-size: 19px;
+}
+
+.information i{
+    font-size: 33px;
+}
+
+.gallery-cell {
+    max-width: 300px;
+    width: 100%;
+    height: 450px;
+}
+
+.slide{
+    display: flex;
+    flex-direction: column;
+    background-color: #E8E8E8;
+}
+
+.slideHerotop{
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    margin-bottom: 50px;
+    padding-bottom: 70px;
+}
+
+.slideHero{
+    margin-inline: 50px;
+    background-color: white;
+    padding: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.slideHerotop > button{
+    background-color: #751FFF;
+    width: 150px;
+    height: 50px;
+    border: 1px solid #751FFF;
+    transition: 0.5s;
+    color: white;
+    border-radius: 10px;
+    font-size: 14px;
+    align-self: center;
+}
+
+.slideHerotop > button:hover{
+    background-color: transparent;
+    color: #751FFF;
+    border-radius: 15px;
+}
+
+
+
+@media only screen and (max-width: 1360px) {
+    .informationhero{
+        padding-inline: 240px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .informationhero{
+        padding-inline: 150px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .informationhero{
+        padding-inline: 30px;
+    }
+
+    .dealSection{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .deals{
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 760px) {
+
+    .dealsHero{
+        display: flex;
+        padding: 0;
+        margin: 0;
+        align-items: center;
+        text-align: center;
+        
+    }
+
+    .deals{
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        
+    }
+
+    .indexSection{
+        justify-content: center;
+        margin: 0;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero{
+        justify-content: center;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+    .slideHero{
+        margin: 0;   
+    }
+
+    .dealsHero{
+        display: flex;
+        padding: 0;
+        margin: 0;
+        align-items: center;
+        text-align: center;
+        
+    }
+
+    .deals{
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        
+    }
+
+    .indexSection{
+        justify-content: center;
+        margin: 0;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero{
+        justify-content: center;
+    }
+
+    .productCard > img:hover{
+        width: 100px;
+        transition: 0.3s;
+    }
+}
+
+
+@media only screen and (max-width: 400px) {
+    .gallery-cell {
+        width: 100%;
+        max-width: 500px;
+        height: 450px;
+    }
+
+    .cardImg{
+        width: 150px;
+        align-self: center;
+    }
+
+    .productCard{
+        max-width: 250px;
+        width: 100%;
+    }
+    
+
+    .slide{
+        display: flex;
+    }
+
+    .gallery-cell {
+        display: flex;
+        justify-content: center;
+    }
+
+    .slideHero{
+        margin-inline: 10px;
+        background-color: white;
+        padding: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+        align-items: center;
+    }
+}

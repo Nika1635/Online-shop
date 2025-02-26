@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Rubik", serif;
+}
+
+.productCard{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 1px solid #E8E8E8;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    
+}
+
+.productCard > div{
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 30px;
+    transition: 0.3s;
+    
+}
+
+.productCard > div p{
+    font-weight: 300;
+}
+
+.cardname{
+    width: 150px;
+}
+
+.priceBar{
+    display: flex;
+    gap: 10px;
+}
+
+.beforeDiscount{
+    text-decoration: line-through;
+    color: #751FFF;
+    text-decoration-color: #751FFF;
+    text-decoration-thickness: 2px;  
+}
+
+.currentPrice{
+    font-size: 20px;
+}
+
+
+.productCard> div:hover{
+    width: 210px;
+}
+
