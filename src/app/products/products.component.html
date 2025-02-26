@@ -1,1 +1,48 @@
-<p>products works!</p>
+<section class="hero">
+    <div class="filter">
+        <div class="browseby">
+            <h1>browse by brand</h1>
+            <div class="brands">
+                <p (click)="getCards()">All</p>
+                @for (item of brands; track $index) {
+                    <p (click)="filterByBrands(item)">{{item}}</p>
+                }
+            </div>
+        </div>
+        <div class="filterby"></div>
+    </div>
+    <div class="products">
+        <div class="search">
+
+        </div>
+        <div class="sortby">
+            <p></p>
+            <select>
+                <option value="">Sort By</option>
+            </select>
+        </div>
+        <div>
+            <div class="ptoductssection">
+                @for (item of products.products; track $index) {
+                    <div class="gallery-cell centerCard">
+                        <div class="productCard">
+                            <div>
+                                <img class="cardImg" [src]="item.images[0]" alt="">
+                                <p class="cardname">{{item.title}}</p>
+                                <div class="priceBar">
+                                    @if (item.price.beforeDiscount > item.price.current) {
+                                        <p class="beforeDiscount">${{item.price.beforeDiscount }}</p>
+                                        <p class="currentPrice">${{item.price.current}}</p>
+                                    }
+                                    @else {
+                                        <p class="currentPrice">${{item.price.current}}</p>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>
