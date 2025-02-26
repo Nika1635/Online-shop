@@ -17,6 +17,7 @@ export class ProductsComponent {
   products: any = []
   brands: any = []
   search!: string;
+  sort!: string;
 
   getCards(){
     this.api.getAllProducts(1).subscribe((data) => this.products = data)

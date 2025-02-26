@@ -26,6 +26,7 @@
     flex-direction: column;
     width: 100%;
     margin-top: 30px;
+    margin-right: 30px;
     gap: 30px;
 }
 
@@ -66,6 +67,7 @@
     width: 100%;
     outline: none;
     padding-inline: 10px;
+    border-radius: 20px 0px 0px 20px;
 }
 
 
@@ -79,4 +81,24 @@
     background-color: #751FFF;
     width: 40px;
     border-radius: 0px 20px 20px 0px;
+}
+
+.sortby{
+    width: 100%;
+    justify-content: end;
+    display: flex;
+}
+
+.sortby select{
+    width: 70px;
+    justify-content: end;
+    display: flex;
+    outline: none;
+    border: 0;
+    background-color: transparent;
+    border-radius: 0;
+}
+
+.sortby option:active{
+    background-color: transparent;
 }
