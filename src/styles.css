@@ -55,5 +55,8 @@
 
 .productCard> div:hover{
     width: 210px;
+    margin-inline: 25px;
 }
+
+
 
