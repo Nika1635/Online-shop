@@ -19,6 +19,8 @@ export class ProductsComponent {
   search!: string;
   sort!: string;
 
+
+
   getCards(){
     this.api.getAllProducts(1).subscribe((data) => this.products = data)
   }
@@ -33,5 +35,9 @@ export class ProductsComponent {
 
   searchByName(){
     this.api.searchByName(this.search).subscribe((data) => this.products = data)
+  }
+
+  sortBy(){
+    console.log(this.sort)
   }
 }

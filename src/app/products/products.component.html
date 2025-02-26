@@ -19,10 +19,10 @@
         </div>
         <div class="sortby">
             <p></p>
-            <select >
-                <option value="--">Sort By</option>
-                <option value="rating">Rating</option>
-                <option value="price">Price</option>
+            <select [(ngModel)] = "sort">
+                <option value [ngValue] = "sort" (click)="sortBy()">Sort By</option>
+                <option value="rating" [ngValue] = "sort" (click)="sortBy()">Rating</option>
+                <option value="price" [ngValue] = "sort" (click)="sortBy()">Price</option>
             </select>
         </div>
         <div>
