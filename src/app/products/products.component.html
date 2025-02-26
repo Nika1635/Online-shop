@@ -1,9 +1,10 @@
 <section class="hero">
     <div class="filter">
         <div class="browseby">
-            <h1>browse by brand</h1>
+            <h1>Browse by brand</h1>
+            <hr>
             <div class="brands">
-                <p (click)="getCards()">All</p>
+                <p (click)="getCards()">All Products</p>
                 @for (item of brands; track $index) {
                     <p (click)="filterByBrands(item)">{{item}}</p>
                 }
@@ -13,7 +14,8 @@
     </div>
     <div class="products">
         <div class="search">
-
+            <input (keyup.enter)="searchByName()" type="text" class="searchBar" [(ngModel)] = "search">
+            <button (click)="searchByName()"><i class="fa-solid fa-magnifying-glass"></i></button>
         </div>
         <div class="sortby">
             <p></p>

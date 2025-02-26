@@ -22,4 +22,8 @@ export class ApiService {
   filterBrands(brand: string){
     return this.api.get(`https://api.everrest.educata.dev/shop/products/brand/${brand}?page_index=1&page_size=50`)
   }
+
+  searchByName(keyword: string){
+    return this.api.get(`https://api.everrest.educata.dev/shop/products/search?page_size=50&keywords=${keyword}`)
+  }
 }

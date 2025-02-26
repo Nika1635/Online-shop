@@ -1,5 +1,7 @@
 .hero{
+    
     display: flex;
+    background-color: #E8E8E8;
 }
 
 .ptoductssection{
@@ -16,11 +18,65 @@
 .filter{
     width: 15%;
     width: 200px;
+    margin: 30px;
 }
 
 .products{
-    width: 85%;
     display: flex;
     flex-direction: column;
     width: 100%;
+    margin-top: 30px;
+    gap: 30px;
+}
+
+.browseby{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.browseby >h1{
+    font-weight: 300;
+}
+
+.brands{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.brands > p {
+    cursor: pointer;
+}
+
+.search{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.searchBar{
+    background-color: transparent;
+    border: 1px #acacac solid;
+    border-right: 0;
+    height: 30px;
+    max-width: 250px;
+    width: 100%;
+    outline: none;
+    padding-inline: 10px;
+}
+
+
+
+.search i{
+    color: white;
+}
+
+.search > button{
+    border: 0;
+    background-color: #751FFF;
+    width: 40px;
+    border-radius: 0px 20px 20px 0px;
 }
