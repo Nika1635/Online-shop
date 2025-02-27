@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { ApiService } from '../api.service';
 import { FormsModule } from '@angular/forms';
+import { SearchComponent } from './search/search.component';
 
 @Component({
   selector: 'app-products',
-  imports: [ FormsModule ],
+  imports: [ FormsModule, SearchComponent ],
   templateUrl: './products.component.html',
   styleUrl: './products.component.css'
 })
@@ -33,8 +34,8 @@ export class ProductsComponent {
     this.api.filterBrands(brands).subscribe((data) => this.products = data)
   }
 
-  searchByName(){
-    this.api.searchByName(this.search).subscribe((data) => this.products = data)
+  searchByName(event: string){
+    this.api.searchByName(event).subscribe((data) => this.products = data)
   }
 
   sortBy(){

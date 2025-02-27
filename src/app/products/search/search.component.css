@@ -1,0 +1,30 @@
+.search{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.searchBar{
+    background-color: transparent;
+    border: 1px #acacac solid;
+    border-right: 0;
+    height: 30px;
+    max-width: 250px;
+    width: 100%;
+    outline: none;
+    padding-inline: 10px;
+    border-radius: 20px 0px 0px 20px;
+}
+
+
+
+.search i{
+    color: white;
+}
+
+.search > button{
+    border: 0;
+    background-color: #751FFF;
+    width: 40px;
+    border-radius: 0px 20px 20px 0px;
+}

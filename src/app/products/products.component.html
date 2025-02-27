@@ -13,16 +13,13 @@
         <div class="filterby"></div>
     </div>
     <div class="products">
-        <div class="search">
-            <input (keyup.enter)="searchByName()" type="text" class="searchBar" [(ngModel)] = "search">
-            <button (click)="searchByName()"><i class="fa-solid fa-magnifying-glass"></i></button>
-        </div>
+        <app-search (transport)="searchByName($event)"></app-search>
         <div class="sortby">
             <p></p>
             <select [(ngModel)] = "sort">
-                <option value [ngValue] = "sort" (click)="sortBy()">Sort By</option>
-                <option value="rating" [ngValue] = "sort" (click)="sortBy()">Rating</option>
-                <option value="price" [ngValue] = "sort" (click)="sortBy()">Price</option>
+                <option value [value] = "sort" (click)="sortBy()">Sort By</option>
+                <option value="rating" [value] = "sort" (click)="sortBy()">Rating</option>
+                <option value="price" [value] = "sort" (click)="sortBy()">Price</option>
             </select>
         </div>
         <div>
