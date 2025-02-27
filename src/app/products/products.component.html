@@ -1,22 +1,5 @@
 <section class="hero">
-    <div class="filter">
-        <div class="browseby">
-            <h1>Browse by brand</h1>
-            <hr>
-            <p (click)="getCards()" style="cursor: pointer; font-size: 16px; font-weight: 300;">All Products</p>
-            <app-bybrand (transport)="filterByBrands($event)"></app-bybrand>
-        </div>
-        <div class="browseby">
-            <h1>Cagerorie</h1>
-            <hr>
-            <app-categories (transportcategorie)="categories($event)"></app-categories>
-        </div>
-        <div class="browseby">
-            <h1>Price</h1>
-            <hr>
-            <app-price (mintransport)="minmax($event)"></app-price>
-        </div>
-    </div>
+    <app-filter (mintransport)="minmax($event)" (transport)="filterByBrands($event)" (transportcategorie)="categories($event)"></app-filter>
     <div class="products">
         <app-search (transport)="searchByName($event)"></app-search>
         <div class="sortby">

@@ -1,0 +1,129 @@
+.brands{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.brands > p {
+    cursor: pointer;
+}
+
+.brands p{
+    text-transform: capitalize;
+}
+
+.categoriebutton{
+    display: flex;
+    background-color: transparent;
+    border: 0px solid #a3a3a3;
+    align-items: center;
+    text-transform: capitalize;
+    padding: 5px;
+    justify-content: center;
+    width: 50%;
+    cursor: pointer;
+}
+
+.categoriebutton:first-child{
+    border: 0;
+    background-color: #ffffff;
+    width: 40px;
+    border-radius:20px 0px 0px 20px;
+    width: 50%;
+    transition: 0.3s;
+}
+
+.categoriebutton:last-child{
+    border: 0;
+    background-color: #ffffff;
+    width: 40px;
+    border-radius:0px 20px 20px 0px;
+    width: 50%;
+    transition: 0.3s;
+}
+
+.categoriebutton:hover{
+    background-color: #751FFF;
+}
+
+
+.categoriebutton > img{
+    width: 20px;
+}
+
+.categories{
+    display: flex;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.price-hero{
+    display: flex;
+}
+
+.input{
+    display: flex;
+    gap: 5px;
+}
+
+.input > input{
+    width: 50%;
+    border: 0;
+    border-bottom: 1px solid #9b9b9b;
+    background-color: transparent;
+    outline: none;
+    padding-inline: 5px;
+    font-weight: 300;
+}
+
+.price{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.price > button{
+    border: 0;
+    height: 30px;
+    background-color: #751FFF;
+    width: 100%;
+    transition: 0.4s;
+    border-radius: 10px;
+    font-weight: 500;
+    color: white;
+    border: 1px solid #751FFF;
+    cursor: pointer;
+}
+
+.price > button:hover{
+    background-color: transparent;
+    color: black;
+}
+
+
+.browseby{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.browseby >h1{
+    font-weight: 300;
+}
+
+@media only screen and (max-width: 400px) {
+    .price-hero{
+        display: flex;
+        flex-direction: column;
+    }
+}
