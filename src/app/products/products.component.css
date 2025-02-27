@@ -15,6 +15,9 @@
     width: 100%;
     max-width: 200px;
     margin: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
 }
 
 .products{
@@ -54,8 +57,6 @@
     border-radius: 20px 0px 0px 20px;
 }
 
-
-
 .search i{
     color: white;
 }
@@ -85,4 +86,13 @@
 
 .sortby option:active{
     background-color: transparent;
+}
+
+
+@media only screen and (max-width: 400px) {
+    .filter{
+        width: 100%;
+        max-width: 200px;
+        margin: 15px;
+    }
 }

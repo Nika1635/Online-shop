@@ -1,0 +1,42 @@
+.categoriebutton{
+    display: flex;
+    background-color: transparent;
+    border: 0px solid #a3a3a3;
+    align-items: center;
+    text-transform: capitalize;
+    padding: 5px;
+    justify-content: center;
+    width: 50%;
+    cursor: pointer;
+}
+
+.categoriebutton:first-child{
+    border: 0;
+    background-color: #ffffff;
+    width: 40px;
+    border-radius:20px 0px 0px 20px;
+    width: 50%;
+    transition: 0.3s;
+}
+
+.categoriebutton:last-child{
+    border: 0;
+    background-color: #ffffff;
+    width: 40px;
+    border-radius:0px 20px 20px 0px;
+    width: 50%;
+    transition: 0.3s;
+}
+
+.categoriebutton:hover{
+    background-color: #751FFF;
+}
+
+
+.categoriebutton > img{
+    width: 20px;
+}
+
+.categories{
+    display: flex;
+}

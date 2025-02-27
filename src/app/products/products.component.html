@@ -6,7 +6,12 @@
             <p (click)="getCards()" style="cursor: pointer; font-size: 16px; font-weight: 300;">All Products</p>
             <app-bybrand (transport)="filterByBrands($event)"></app-bybrand>
         </div>
-        <div class="filterby"></div>
+
+        <div class="browseby">
+            <h1>Filter</h1>
+            <hr>
+            <app-categories (transportcategorie)="categories($event)"></app-categories>
+        </div>
     </div>
     <div class="products">
         <app-search (transport)="searchByName($event)"></app-search>
