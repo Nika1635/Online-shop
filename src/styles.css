@@ -57,7 +57,7 @@
 
 .productCard> div:hover{
     width: 210px;
-    margin-inline: 25px;
+    margin-inline: 15px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -75,6 +75,11 @@
         font-weight: 300;
     }
 
+    .productCard> div:hover{
+        width: 135px;
+        margin-inline: 25px;
+    }
+
 
 }
 
@@ -87,12 +92,18 @@
     .productCard > div{
         width: 90px;
         gap: 20px;
+        margin: 30px;
     }
 
     .productCard > div p{
         font-size: 12px;
     }
 
+
+    .productCard> div:hover{
+        width: 90px;
+        margin: 30px;
+    }
 
 }
 
