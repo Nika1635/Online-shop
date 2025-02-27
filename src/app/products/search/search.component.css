@@ -27,4 +27,5 @@
     background-color: #751FFF;
     width: 40px;
     border-radius: 0px 20px 20px 0px;
+    transition: 0.4s;
 }

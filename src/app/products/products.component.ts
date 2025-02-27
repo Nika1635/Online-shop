@@ -4,10 +4,11 @@ import { FormsModule } from '@angular/forms';
 import { SearchComponent } from './search/search.component';
 import { BybrandComponent } from './bybrand/bybrand.component';
 import { CategoriesComponent } from './categories/categories.component';
+import { PriceComponent } from './price/price.component';
 
 @Component({
   selector: 'app-products',
-  imports: [ FormsModule, SearchComponent, BybrandComponent, CategoriesComponent ],
+  imports: [ FormsModule, SearchComponent, BybrandComponent, CategoriesComponent, PriceComponent ],
   templateUrl: './products.component.html',
   styleUrl: './products.component.css'
 })
@@ -39,5 +40,9 @@ export class ProductsComponent {
 
   categories(id: number){
     this.api.byCategory(id).subscribe((data) => this.products = data)
+  }
+
+  minmax(info: any){
+    this.api.minmax(info.min, info.max).subscribe((data) => this.products = data)
   }
 }

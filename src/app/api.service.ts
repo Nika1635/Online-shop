@@ -38,4 +38,8 @@ export class ApiService {
   categories(){
     return this.api.get(`https://api.everrest.educata.dev/shop/products/categories`)
   }
+
+  minmax(min:number, max:number){
+    return this.api.get(`https://api.everrest.educata.dev/shop/products/search?page_index=1&page_size=50&price_min=${min}&price_max=${max}`)
+  }
 }

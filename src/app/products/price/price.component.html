@@ -1,0 +1,13 @@
+<div class="price">
+    <div class="price-hero">
+        <div class="input">
+            <label for="min">Min:</label>
+            <input type="number" name="min" value="0" (keyup.enter)="price()" [(ngModel)]="min">
+        </div>
+        <div class="input">
+            <label for="Max">Max:</label>
+            <input type="number" name="Max" value="0" (keyup.enter)="price()" [(ngModel)]="max">
+        </div>
+    </div>
+    <Button (click)="price()">Apply</Button>
+</div>

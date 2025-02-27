@@ -1,0 +1,72 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.price-hero{
+    display: flex;
+}
+
+.input{
+    display: flex;
+    gap: 5px;
+}
+
+.input > input{
+    width: 50%;
+    border: 0;
+    border-bottom: 1px solid #9b9b9b;
+    background-color: transparent;
+    outline: none;
+    padding-inline: 5px;
+    font-weight: 300;
+}
+
+.price{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.price > button{
+    border: 0;
+    height: 30px;
+    background-color: #751FFF;
+    width: 100%;
+    transition: 0.4s;
+    border-radius: 10px;
+    font-weight: 500;
+    color: white;
+    border: 1px solid #751FFF;
+    cursor: pointer;
+}
+
+.price > button:hover{
+    background-color: transparent;
+    color: black;
+}
+
+
+@media only screen and (max-width: 500px) {
+
+    .input > input{
+        width: 30px;
+    }
+  }
+
+  
+@media only screen and (max-width: 400px) {
+
+    .input > input{
+        width: 40px;
+    }
+
+    .price-hero{
+        flex-direction: column;
+    }
+}
