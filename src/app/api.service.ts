@@ -30,4 +30,8 @@ export class ApiService {
   sortBy(rating: string){
     return this.api.get(`https://api.everrest.educata.dev/shop/products/search?page_index=1&page_size=50&sort_by=${rating}`)
   }
+
+  byCategory(category: string){
+    return this.api.get(`https://api.everrest.educata.dev/shop/products/search?page_index=1&page_size=50&category_id=${category}`)
+  }
 }

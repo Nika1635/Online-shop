@@ -11,10 +11,6 @@
     justify-content: center;
 }
 
-.brands p{
-    text-transform: capitalize;
-}
-
 .filter{
     width: 100%;
     max-width: 200px;
@@ -38,18 +34,6 @@
 
 .browseby >h1{
     font-weight: 300;
-}
-
-.brands{
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    font-size: 16px;
-    font-weight: 300;
-}
-
-.brands > p {
-    cursor: pointer;
 }
 
 .search{

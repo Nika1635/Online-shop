@@ -3,19 +3,14 @@
         <div class="browseby">
             <h1>Browse by brand</h1>
             <hr>
-            <div class="brands">
-                <p (click)="getCards()">All Products</p>
-                @for (item of brands; track $index) {
-                    <p (click)="filterByBrands(item)">{{item}}</p>
-                }
-            </div>
+            <p (click)="getCards()" style="cursor: pointer; font-size: 16px; font-weight: 300;">All Products</p>
+            <app-bybrand (transport)="filterByBrands($event)"></app-bybrand>
         </div>
         <div class="filterby"></div>
     </div>
     <div class="products">
         <app-search (transport)="searchByName($event)"></app-search>
         <div class="sortby">
-            <p></p>
             <select [(ngModel)] = "sort">
                 <option value [value] = "sort" (click)="sortBy()">Sort By</option>
                 <option value="rating" [value] = "sort" (click)="sortBy()">Rating</option>

@@ -1,0 +1,5 @@
+<div class="brands">
+    @for (item of brands; track $index) {
+        <p (click)="filterByBrands(item)">{{item}}</p>
+    }
+</div>
