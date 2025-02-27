@@ -71,7 +71,29 @@
         gap: 20px;
     }
 
+    .productCard > div p{
+        font-weight: 300;
+    }
 
-  }
+
+}
+
+@media only screen and (max-width: 350px) {
+    .productCard{
+        height: 250px;
+        
+    }
+    
+    .productCard > div{
+        width: 90px;
+        gap: 20px;
+    }
+
+    .productCard > div p{
+        font-size: 12px;
+    }
+
+
+}
 
 
