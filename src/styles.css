@@ -34,7 +34,8 @@
 }
 
 .cardname{
-    width: 150px;
+    max-width: 150px;
+    width: 100%;
 }
 
 .priceBar{
@@ -59,5 +60,18 @@
     margin-inline: 25px;
 }
 
+@media only screen and (max-width: 600px) {
+    .productCard{
+        height: 300px;
+        
+    }
+    
+    .productCard > div{
+        width: 125px;
+        gap: 20px;
+    }
+
+
+  }
 
 
