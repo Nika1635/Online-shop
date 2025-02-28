@@ -4,14 +4,13 @@
         <app-search (transport)="searchByName($event)"></app-search>
         <div class="sortby">
             <select [(ngModel)] = "sort">
-                <option value [value] = "sort" (click)="sortBy()">Sort By</option>
-                <option value="rating" [value] = "sort" (click)="sortBy()">Rating</option>
-                <option value="price" [value] = "sort" (click)="sortBy()">Price</option>
+                <option>Sort By</option>
+                <option>Rating</option>
+                <option>Price</option>
             </select>
         </div>
         <div>
             <div class="ptoductssection">
-                @if (products.products.length > 0) {
                     @for (item of products.products; track $index) {
                         <div class="gallery-cell centerCard">
                             <div class="productCard">
@@ -30,11 +29,10 @@
                                 </div>
                             </div>
                         </div>
-                    }
-                } @else {
-                    <img src="/photos/6.png" alt="" class="notfound">
-                }
+                    } @empty {
+                        <img src="/photos/6.png" alt="" class="notfound">
 
+                    }
             </div>
         </div>
     </div>
