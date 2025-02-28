@@ -85,12 +85,12 @@
 
 @media only screen and (max-width: 350px) {
     .productCard{
-        height: 250px;
+        height: 220px;
         
     }
     
     .productCard > div{
-        width: 90px;
+        width: 70px;
         gap: 20px;
         margin: 30px;
     }
