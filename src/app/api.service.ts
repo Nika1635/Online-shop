@@ -27,10 +27,6 @@ export class ApiService {
     return this.api.get(`https://api.everrest.educata.dev/shop/products/search?page_size=50&keywords=${keyword}`)
   }
 
-  sortBy(rating: string){
-    return this.api.get(`https://api.everrest.educata.dev/shop/products/search?page_index=1&page_size=50&sort_by=${rating}`)
-  }
-
   byCategory(category: number){
     return this.api.get(`https://api.everrest.educata.dev/shop/products/search?page_index=1&page_size=50&category_id=${category}`)
   }
@@ -39,11 +35,7 @@ export class ApiService {
     return this.api.get(`https://api.everrest.educata.dev/shop/products/categories`)
   }
 
-  minmax(min:number, max:number){
-    return this.api.get(`https://api.everrest.educata.dev/shop/products/search?page_index=1&page_size=50&price_min=${min}&price_max=${max}`)
-  }
-
-  filterall(categoryid: string){
-    return this.api.get(`https://api.everrest.educata.dev/shop/products/search?page_index=1&page_size=50&category_id=`)
+  filterall(object: any){
+    return this.api.get(`https://api.everrest.educata.dev/shop/products/search?page_index=1&page_size=50${object.direction}${object.by}${object.min}${object.max}`)
   }
 }

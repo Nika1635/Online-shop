@@ -2,6 +2,7 @@
     <h1>Browse by brand</h1>
     <hr>
     <div class="brands">
+        
         @for (item of brands; track $index) {
             <p (click)="filterByBrands(item)">{{item}}</p>
         }
@@ -23,13 +24,27 @@
         <div class="price-hero">
             <div class="input">
                 <label for="min">Min:</label>
-                <input type="number" name="min" value="0" (keyup.enter)="price()" [(ngModel)]="min">
+                <input type="number" name="min" value="0"  (input)="sortBy()"  [(ngModel)]="min">
             </div>
             <div class="input">
                 <label for="Max">Max:</label>
-                <input type="number" name="Max" value="0" (keyup.enter)="price()" [(ngModel)]="max">
+                <input type="number" name="Max" value="0" (input)="sortBy()" [(ngModel)]="max">
             </div>
         </div>
-        <Button (click)="price()">Apply</Button>
+    </div>
+
+    <div class="select">
+        <select [(ngModel)] = "sort" (change)="sortBy()" class="sortBy">
+            <option>Sort By</option>
+            <option value="rating">Rating</option>
+            <option value="price">Price</option>
+            <option value="issue_date">Issue date</option>
+            <option value="title">Title</option>
+        </select>
+        <select [(ngModel)] = "direction" (change)="sortBy()" class="sortBy">
+            <option>Direction</option>
+            <option value="asc">Ascendes</option>
+            <option value="desc">Descendes</option>
+        </select>
     </div>
 </div>

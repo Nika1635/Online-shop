@@ -49,26 +49,6 @@
     border-radius: 0px 20px 20px 0px;
 }
 
-.sortby{
-    width: 100%;
-    justify-content: end;
-    display: flex;
-}
-
-.sortby select{
-    width: 70px;
-    justify-content: end;
-    display: flex;
-    outline: none;
-    border: 0;
-    background-color: transparent;
-    border-radius: 0;
-}
-
-.sortby option:active{
-    background-color: transparent;
-}
-
 .notfound{
     max-width: 255px;
     width: 100%;

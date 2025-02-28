@@ -16,8 +16,6 @@ export class ProductsComponent {
   }
 
   products: any = []
-  sort!: string;
-
 
 
   getCards(){
@@ -28,19 +26,15 @@ export class ProductsComponent {
     this.api.searchByName(event).subscribe((data) => this.products = data)
   }
 
-  sortBy(){
-    console.log(this.sort)
-  }
-
   categories(id: number){
     this.api.byCategory(id).subscribe((data) => this.products = data)
   }
 
-  minmax(info: any){
-    this.api.minmax(info.min, info.max).subscribe((data) => this.products = data)
-  }
-
   filterByBrands(brands: string){
     this.api.filterBrands(brands).subscribe((data) => this.products = data)
+  }
+
+  directiontransport(obj: any){
+    this.api.filterall(obj).subscribe((data) => this.products = data)
   }
 }

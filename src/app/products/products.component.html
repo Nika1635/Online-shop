@@ -1,14 +1,7 @@
 <section class="hero">
-    <app-filter (mintransport)="minmax($event)" (transport)="filterByBrands($event)" (transportcategorie)="categories($event)"></app-filter>
+    <app-filter (transport)="filterByBrands($event)" (transportcategorie)="categories($event)"  (directiontransport)="directiontransport($event)"></app-filter>
     <div class="products">
         <app-search (transport)="searchByName($event)"></app-search>
-        <div class="sortby">
-            <select [(ngModel)] = "sort">
-                <option>Sort By</option>
-                <option>Rating</option>
-                <option>Price</option>
-            </select>
-        </div>
         <div>
             <div class="ptoductssection">
                     @for (item of products.products; track $index) {
@@ -31,7 +24,6 @@
                         </div>
                     } @empty {
                         <img src="/photos/6.png" alt="" class="notfound">
-
                     }
             </div>
         </div>
