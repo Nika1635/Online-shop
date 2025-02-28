@@ -6,12 +6,13 @@
     font-weight: 300;
 }
 
-.brands > p {
+.brands > li {
     cursor: pointer;
 }
 
-.brands p{
+.brands li{
     text-transform: capitalize;
+    list-style-type: none;
 }
 
 .categoriebutton{
@@ -69,6 +70,7 @@ input[type=number] {
 
 .price-hero{
     display: flex;
+    gap: 10px;
 }
 
 .input{
@@ -90,6 +92,7 @@ input[type=number] {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 20px;
 }
 
 .price > button{
@@ -131,12 +134,19 @@ input[type=number] {
 .select{
     display: flex;
     justify-content: space-around;
-    flex-wrap: wrap;
+    gap: 20px;
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 500px) {
     .price-hero{
         display: flex;
         flex-direction: column;
+    }
+
+    .select{
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        gap: 20px;
     }
 }

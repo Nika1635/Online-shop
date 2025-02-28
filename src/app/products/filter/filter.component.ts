@@ -17,6 +17,7 @@ export class FilterComponent {
   @Output() transportcategorie: EventEmitter<any> = new EventEmitter()
   @Output() transport: EventEmitter<any> = new EventEmitter()
   @Output() directiontransport: EventEmitter<{ by: string; direction: string; min: string; max: string}> = new EventEmitter()
+  @Output() allProductss: EventEmitter<any> = new EventEmitter()
 
   min!: string;
   max!: string;
@@ -25,6 +26,9 @@ export class FilterComponent {
   sort: string = "Sort By"
   direction: string = "Direction"
 
+  allProducts(){
+    this.allProductss.emit()
+  }
   
   categories(){
     this.api.categories().subscribe((data) => this.categoriesarr = data)

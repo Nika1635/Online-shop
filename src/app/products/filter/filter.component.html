@@ -1,12 +1,12 @@
 <div class="browseby">
     <h1>Browse by brand</h1>
     <hr>
-    <div class="brands">
-        
+    <ul class="brands">
+        <li (click)="allProducts()">All Products</li>
         @for (item of brands; track $index) {
-            <p (click)="filterByBrands(item)">{{item}}</p>
+            <li (click)="filterByBrands(item)">{{item}}</li>
         }
-    </div>
+    </ul>
 </div>
 <div class="browseby">
     <h1>Categorie</h1>

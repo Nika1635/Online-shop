@@ -1,5 +1,5 @@
 <section class="hero">
-    <app-filter (transport)="filterByBrands($event)" (transportcategorie)="categories($event)"  (directiontransport)="directiontransport($event)"></app-filter>
+    <app-filter (transport)="filterByBrands($event)" (transportcategorie)="categories($event)"  (directiontransport)="directiontransport($event)" (allProductss)="getCards()"></app-filter>
     <div class="products">
         <app-search (transport)="searchByName($event)"></app-search>
         <div>
