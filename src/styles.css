@@ -58,6 +58,8 @@
 .productCard> div:hover{
     width: 210px;
     margin-inline: 25px;
+    color: #751FFF;
+    cursor: pointer;
 }
 
 @media only screen and (max-width: 600px) {

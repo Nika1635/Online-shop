@@ -35,7 +35,11 @@ export class ApiService {
     return this.api.get(`https://api.everrest.educata.dev/shop/products/brands`)
   }
 
+  getProductDetails(id: string){
+    return this.api.get(`https://api.everrest.educata.dev/shop/products/id/${id}`)
+  }
+
   getAllProducts(pages: any){
-    return this.api.get(`https://api.everrest.educata.dev/shop/products/all?page_index=${pages}&page_size=10`)
+    return this.api.get(`https://api.everrest.educata.dev/shop/products/all?page_index=${pages}&page_size=15`)
   }
 }

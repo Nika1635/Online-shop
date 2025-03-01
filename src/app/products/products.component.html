@@ -6,7 +6,7 @@
             <div class="ptoductssection">
                     @for (item of products.products; track $index) {
                         <div class="gallery-cell centerCard">
-                            <div class="productCard">
+                            <div class="productCard" routerLink="/details/{{item._id}}">
                                 <div>
                                     <img class="cardImg" [src]="item.images[0]" alt="">
                                     <p class="cardname">{{item.title}}</p>

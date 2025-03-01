@@ -3,10 +3,11 @@ import { ApiService } from '../api.service';
 import { FormsModule } from '@angular/forms';
 import { SearchComponent } from './search/search.component';
 import { FilterComponent } from './filter/filter.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-products',
-  imports: [ FormsModule, SearchComponent, FilterComponent],
+  imports: [ FormsModule, SearchComponent, FilterComponent, RouterModule],
   templateUrl: './products.component.html',
   styleUrl: './products.component.css'
 })
