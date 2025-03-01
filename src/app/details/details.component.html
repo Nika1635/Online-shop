@@ -1,7 +1,9 @@
 <div class="hero">
     <div class="hero-main">
         <div class="photo-container">
-            <img [src]="productimage[1]" alt="">
+            <img [src]="productimage[photoarrindex - 1]" alt="">
+            <i class="fa-solid fa-left-long" (click)="previous()"></i>
+            <i class="fa-solid fa-right-long" (click)="next()"></i>
         </div>
         <div>
             <h1>{{productInfo.title}}</h1>

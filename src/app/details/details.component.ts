@@ -16,6 +16,7 @@ export class DetailsComponent {
   productId: any = ""
   productInfo: any = {} 
   productimage: any = []
+  photoarrindex: number = 1
 
   getId(){
     this.productid.params.subscribe((data) =>{
@@ -27,5 +28,23 @@ export class DetailsComponent {
       this.productimage = this.productInfo.images
       console.log(this.productInfo)
     })
+  }
+
+  next(){
+    if(this.photoarrindex === this.productimage.length){
+      this.photoarrindex = 1
+    } else {
+      this.photoarrindex++
+    }
+    console.log(this.photoarrindex)
+  }
+
+  previous(){
+    if(this.photoarrindex === 1){
+      this.photoarrindex = this.productimage.length
+    } else {
+      this.photoarrindex--
+    }
+    console.log(this.photoarrindex)
   }
 }
