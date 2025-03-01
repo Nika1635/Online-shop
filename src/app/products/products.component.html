@@ -1,5 +1,5 @@
 <section class="hero">
-    <app-filter (transport)="filterByBrands($event)" (transportcategorie)="categories($event)"  (directiontransport)="directiontransport($event)" (allProductss)="getCards()"></app-filter>
+    <app-filter (transport)="filterByBrands($event)" (transportcategorie)="categories($event)"  (directiontransport)="directiontransport($event)" (allProductss)="getCards(1)"></app-filter>
     <div class="products">
         <app-search (transport)="searchByName($event)"></app-search>
         <div>
@@ -25,6 +25,13 @@
                     } @empty {
                         <img src="/photos/6.png" alt="" class="notfound">
                     }
+            </div>
+            <div class="pages">
+                <button class="pagebutton" [disabled]="currentpage === 1" (click)="currentpage = currentpage - 1 ; getCards(currentpage)">Prev</button>
+                @for (item of pages; track $index) {
+                    <button class="pagebutton" [class.active]="item === currentpage" (click)="currentpage = item" (click)="getCards(currentpage)">{{item}}</button>
+                }
+                <button class="pagebutton" [disabled]="currentpage === pages.length" (click)="currentpage = currentpage + 1; getCards(currentpage)">Next</button>
             </div>
         </div>
     </div>

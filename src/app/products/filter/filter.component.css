@@ -137,6 +137,25 @@ input[type=number] {
     gap: 20px;
 }
 
+.applyall{
+    background-color: #751FFF;
+    border: 1px solid #751FFF;
+    border-radius: 10px;
+    color: white;
+    height: 40px;
+    cursor: pointer;
+}
+
+.applyall{
+    background-color: #751FFF;
+    border: 1px solid #751FFF;
+    border-radius: 10px;
+    color: white;
+    height: 40px;
+    cursor: pointer;
+}
+
+
 @media only screen and (max-width: 500px) {
     .price-hero{
         display: flex;
