@@ -15,6 +15,7 @@ export class DetailsComponent {
 
   productId: any = ""
   productInfo: any = {} 
+  productimage: any = []
 
   getId(){
     this.productid.params.subscribe((data) =>{
@@ -23,6 +24,7 @@ export class DetailsComponent {
 
     this.api.getProductDetails(this.productId.id).subscribe((data) => {
       this.productInfo = data
+      this.productimage = this.productInfo.images
       console.log(this.productInfo)
     })
   }

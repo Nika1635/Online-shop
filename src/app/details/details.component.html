@@ -1,1 +1,28 @@
-<h1>{{productInfo.description}}</h1>
+<div class="hero">
+    <div class="hero-main">
+        <div class="photo-container">
+            <img [src]="productimage[1]" alt="">
+        </div>
+        <div>
+            <h1>{{productInfo.title}}</h1>
+            <div class="price">
+            @if (productInfo.price.beforeDiscount > productInfo.price.current) {
+                <p class="beforeDiscount">${{productInfo.price.beforeDiscount }}</p>
+                <p class="currentPrice">${{productInfo.price.current}}</p>
+            }
+            @else {
+                <p class="currentPrice">${{productInfo.price.current}}</p>
+            }
+            </div>
+            <div class="quantity">
+                <label for="quantity">Quantity</label>
+                <input type="number" value="1" name="quantity">
+            </div>
+            <button>Add To Cart</button>
+            <div class="description">
+                <p>Description</p>
+                <p>{{productInfo.description}}</p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,110 @@
+.hero{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #E8E8E8;
+}
+
+.hero-main{
+    max-width: 1200px;
+    width: 100%;
+    margin: 200px 40px;
+    display: flex;
+    gap: 30px;
+}
+
+.hero-main >div{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.hero-main div > h1{
+    font-weight: 100;
+}
+
+.hero-main div > p{
+    font-weight: 100;
+}
+
+.photo-container >img{
+    width: 100%;
+    padding: 30px;
+    height: 400px;
+    object-fit: contain;
+}
+
+.photo-container{
+    width: 100%;
+    background-color: white;
+    border: 1px solid rgb(112, 112, 112);
+}
+
+.price{
+    display: flex;
+    gap: 10px;
+    font-weight: 100;
+}
+
+.quantity{
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    gap: 5px;
+    font-weight: 100;
+}
+
+.quantity > input{
+    height: 30px;
+    width: 60px;
+    outline: 0;
+    padding: 10px 0px 10px 10px;
+    border: 1px solid rgb(211, 211, 211);
+}
+
+.hero-main button{
+    height: 40px;
+    border: 0;
+    background-color: #751FFF;
+    color: white;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.description{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+
+@media only screen and (max-width: 800px) {
+  .hero-main{
+    flex-direction: column;
+    margin: 100px 40px;
+  }
+
+  .hero-main >div{
+    width: 100%;
+
+    
+}
+
+
+@media only screen and (max-width: 400px) {
+    .photo-container >img{
+        width: 100%;
+        padding: 30px;
+        height: 200px;
+        object-fit: contain;
+    }
+
+    .hero-main{
+        flex-direction: column;
+        margin: 50px 40px;
+      }
+}
+
+}
