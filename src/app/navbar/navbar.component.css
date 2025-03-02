@@ -40,6 +40,15 @@ nav{
     display: flex;
     gap: 5px;
     font-weight: 300;
+    cursor: pointer;
+}
+
+.login > i{
+    cursor: pointer;
+}
+
+.login > p{
+    cursor: pointer;
 }
 
 .fa-user{

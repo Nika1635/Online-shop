@@ -6,4 +6,8 @@ import { Injectable } from '@angular/core';
 })
 export class PostService {
   constructor(public post: HttpClient) {}
+
+  signUp(body: any){
+    return this.post.post("https://api.everrest.educata.dev/auth/sign_up", body)
+  }
 }

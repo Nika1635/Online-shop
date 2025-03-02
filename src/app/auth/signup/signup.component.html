@@ -1,43 +1,77 @@
 <div class="sign-hero">
     <div>
-        <form class="signform">
+        <form class="signform" [formGroup]="form">
             <div>
                 <label for="">First Name</label>
-                <input type="text">
+                <input type="text" formControlName="firstName">
+                @if (form.get("firstName")?.invalid && form.get("firstName")?.dirty) {
+                    <p>Must be minimum 3 characters and maximum 20!</p>
+                }
             </div>
             <div>
                 <label for="">Last Name</label>
-                <input type="text">
+                <input type="text" formControlName="lastName">
+                @if (form.get("lastName")?.invalid && form.get("lastName")?.dirty) {
+                    <p>Must be minimum 3!</p>
+                }
             </div>
             <div>
                 <label for="">Email</label>
-                <input type="email">
+                <input type="email" formControlName="email">
+                @if (form.get("email")?.invalid && form.get("email")?.dirty) {
+                    <p>You must enter your email!</p>
+                }
             </div>
             <div>
                 <label for="">Password</label>
-                <input type="password">
+                <input type="password" formControlName="password">
+                @if (form.get("password")?.invalid && form.get("password")?.dirty) {
+                    <p>Password must be minimum 8 characters!</p>
+                }
             </div>
             <div>
                 <label for="">Phone</label>
-                <input type="number">
+                <input type="text" formControlName="phone">
+                @if (form.get("phone")?.invalid && form.get("phone")?.dirty) {
+                    <p>You must enter your phone number!</p>
+                }
             </div>
             <div>
                 <label for="">Zip Code</label>
-                <input type="number">
+                <input type="text" formControlName="zipcode">
+                @if (form.get("zipcode")?.invalid && form.get("zipcode")?.dirty) {
+                    <p>You must enter your zipcode!</p>
+                }
             </div>
             <div>
                 <label for="">Address</label>
-                <input type="text">
+                <input type="text" formControlName="address">
+                @if (form.get("address")?.invalid && form.get("address")?.dirty) {
+                    <p>You must enter your address!</p>
+                }
             </div>
             <div>
                 <label for="">Age</label>
-                <input type="number">
+                <input type="number" formControlName="age">
+                @if (form.get("age")?.invalid && form.get("age")?.dirty) {
+                    <p>You must enter your address!</p>
+                }
             </div>
             <div>
                 <label for="">Image Url</label>
-                <input type="text">
+                <input type="text" formControlName="avatar">
+                @if (form.get("avatar")?.invalid && form.get("avatar")?.dirty) {
+                    <p>You must enter your address!</p>
+                }
             </div>
-            <input type="submit">
+            <div>
+                <label for="">Gender</label>
+                <select name="" formControlName="gender">
+                    <option value="MALE">Male</option>
+                    <option value="FEMALE">Female</option>
+                </select>
+            </div>
+            <input type="submit" (click)="formlog()" [disabled]="form.invalid">
             <p>Already Registered? <a routerLink="//auth/signin">Click Here!</a></p>
         </form>
     </div>

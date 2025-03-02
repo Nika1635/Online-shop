@@ -114,6 +114,18 @@
     cursor: pointer;
 }
 
+.signform  div> p{
+    color: red;
+    font-size: 13px;
+}
+
+.signform  div> select{
+    padding: 5px;
+    outline: none;
+    border: 1px solid rgb(143, 143, 143);
+
+}
+
 .signform > p{
     font-weight: 100;
     font-size: 14px;
@@ -122,6 +134,11 @@
 .signform > a{
     font-weight: 100;
     font-size: 14px;
+}
+
+input:disabled{
+    background-color: #caa8ff;
+    cursor: help;
 }
 
 
@@ -171,5 +188,6 @@
     }
 
 }
+
 
 
