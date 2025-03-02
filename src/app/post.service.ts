@@ -14,4 +14,8 @@ export class PostService {
   signIn(body: any){
     return this.post.post("https://api.everrest.educata.dev/auth/sign_in", body)
   }
+
+  loginInfo(data: any){
+    return this.post.get("https://api.everrest.educata.dev/auth", {headers: data})
+  }
 }

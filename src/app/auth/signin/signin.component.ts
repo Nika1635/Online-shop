@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { PostService } from '../../post.service';
+import {CookieService} from 'ngx-cookie-service';
+import { HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-signin',
@@ -10,7 +12,9 @@ import { PostService } from '../../post.service';
   styleUrl: './signin.component.css'
 })
 export class SigninComponent {
-  constructor(public post: PostService){}
+  constructor(public post: PostService, public cookie: CookieService){
+    
+  }
 
 
   public form: FormGroup = new FormGroup({
@@ -24,12 +28,24 @@ export class SigninComponent {
     console.log(this.form)
     this.post.signIn(this.form.value).subscribe({
       next: (data) =>{
-        console.log(data)
         this.response = "You loged in succesfully"
+        const response = data as { access_token: string };
+        this.cookie.set("token", response.access_token);
+        this.getLoginInfo()
       },
       error: (error) => {
         this.response = "Cant sign In"
       }
+    })
+  }
+
+  getLoginInfo(){
+    let header = new HttpHeaders({
+      "Authorization": `Bearer ${this.cookie.get("token")}`
+    })
+
+    this.post.loginInfo(header).subscribe((data) =>{
+      console.log(data)
     })
   }
 }
