@@ -1,6 +1,6 @@
 <div class="sign-hero">
     <div>
-        <form class="signform">
+        <form class="signform" [formGroup]="form">
             <div>
                 <label for="">Email</label>
                 <input type="email" formControlName="email">
@@ -9,7 +9,14 @@
                 <label for="">Password</label>
                 <input type="password" formControlName="password">
             </div>
-            <input type="submit" [disabled]="form.invalid">
+            <input type="submit" [disabled]="form.invalid" (click)="formlog()">
+            @if (response == "") {
+                
+            }@else if(response == "You loged in succesfully") {
+                <p class="trueresponse">You loged in succesfully</p>
+            }@else if(response == "Cant sign In") {
+                <p class="falseresponse">Cant sign In</p>
+            }
             <p>Not Registered Yet? <a routerLink="//auth/signup">Click Here!</a></p>
         </form>
     </div>

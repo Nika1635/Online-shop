@@ -24,6 +24,7 @@
     "@types/slick-carousel": "^1.6.40",
     "express": "^4.18.2",
     "flickity": "^3.0.0",
+    "ngx-cookie-service": "^19.1.2",
     "ngx-simple-slick": "^2.0.0",
     "rxjs": "~7.8.0",
     "slick-carousel": "^1.8.1",

@@ -33,10 +33,8 @@ export class SignupComponent {
   response: string = ""
 
   formlog(){
-    console.log(this.form)
     this.post.signUp(this.form.value).subscribe({
       next: (data) =>{
-        console.log(data)
         this.response = "Check your email for verification"
       },
       error: (error) => {
