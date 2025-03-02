@@ -66,8 +66,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    
     background-color: #e8e8e8e8;
+    padding-block: 300px;
 }
 
 

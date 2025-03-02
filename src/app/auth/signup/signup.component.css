@@ -1,0 +1,7 @@
+.sign-hero{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e8e8e8e8;
+    padding-block: 50px;
+}
