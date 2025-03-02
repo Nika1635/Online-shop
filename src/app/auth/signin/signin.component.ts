@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -10,4 +10,13 @@ import { RouterModule } from '@angular/router';
 })
 export class SigninComponent {
 
+
+  public form: FormGroup = new FormGroup({
+    email: new FormControl ("", [Validators.required, Validators.email]),
+    password: new FormControl ("", [Validators.required, Validators.minLength(8)]),
+  })
+
+  signIn(){
+    
+  }
 }

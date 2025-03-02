@@ -10,4 +10,8 @@ export class PostService {
   signUp(body: any){
     return this.post.post("https://api.everrest.educata.dev/auth/sign_up", body)
   }
+
+  signIn(body: any){
+    return this.post.post("https://api.everrest.educata.dev/auth/sign_in", body)
+  }
 }

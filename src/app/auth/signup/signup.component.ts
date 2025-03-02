@@ -30,15 +30,17 @@ export class SignupComponent {
     gender: new FormControl ("", [Validators.required])
   })
 
+  response: string = ""
+
   formlog(){
     console.log(this.form)
     this.post.signUp(this.form.value).subscribe({
       next: (data) =>{
         console.log(data)
-        alert("Check your email for verification")
+        this.response = "Check your email for verification"
       },
       error: (error) => {
-        alert("Cant sign up")
+        this.response = "Cant sign up"
       }
     })
   }

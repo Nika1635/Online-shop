@@ -72,6 +72,13 @@
                 </select>
             </div>
             <input type="submit" (click)="formlog()" [disabled]="form.invalid">
+            @if (response == "") {
+                
+            }@else if(response == "Check your email for verification") {
+                <p class="trueresponse">Your Account Succesfully Registered!</p>
+            }@else if(response == "Cant sign up") {
+                <p class="falseresponse">There Was Problem Registering Your Account</p>
+            }
             <p>Already Registered? <a routerLink="//auth/signin">Click Here!</a></p>
         </form>
     </div>

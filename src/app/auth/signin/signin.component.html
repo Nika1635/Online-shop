@@ -9,7 +9,7 @@
                 <label for="">Password</label>
                 <input type="password" formControlName="password">
             </div>
-            <input type="submit">
+            <input type="submit" [disabled]="form.invalid">
             <p>Not Registered Yet? <a routerLink="//auth/signup">Click Here!</a></p>
         </form>
     </div>
