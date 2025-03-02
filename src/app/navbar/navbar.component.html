@@ -6,13 +6,22 @@
             <li><a routerLink="/products">Products</a></li>
         </ul>
         <div>
-            <div class="login first" routerLink="auth/signin">
-                <i class="fa-solid fa-user"></i>
-                <p>Sign In</p>
-            </div>
-            <div class="cart first">
-                <i class="fa-solid fa-cart-shopping"></i>
-            </div>
+            @if (cookie.get("token") == '') {
+                <div class="login first" routerLink="auth/signin">
+                    <p>Sign In</p>
+                </div>
+                <div class="login first" routerLink="auth/signup">
+                    <p>Sign Up</p>
+                </div>
+            } @else {
+                <div class="profile">
+                    <img [src]="information.avatar" alt="">
+                    <p>{{information.firstName}}</p>
+                </div>
+                <div class="cart first">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+            }
             <i class="fa-solid fa-bars burgerbar" (click)="switch()"></i>
         </div>
         <div class="responsive" [ngClass]="navbar ? 'show' : 'none' ">
@@ -21,13 +30,18 @@
                 <li><a routerLink="/products">Products</a></li>
             </ul>
             <div>
-                <div class="login" routerLink="auth/signin">
-                    <i class="fa-solid fa-user"></i>
-                    <p>Sign In</p>
-                </div>
-                <div class="cart">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                </div>
+                @if (cookie.get("token") == '') {
+                    <div class="login" routerLink="auth/signin">
+                        <p>Sign In</p>
+                    </div>
+                    <div class="login" routerLink="auth/signup">
+                        <p>Sign Up</p>
+                    </div>
+                } @else {
+                    <div class="cart">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                }
             </div>
         </div>
     </div>

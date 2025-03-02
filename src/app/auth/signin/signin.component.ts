@@ -25,7 +25,6 @@ export class SigninComponent {
   response: string = ""
 
   formlog(){
-    console.log(this.form)
     this.post.signIn(this.form.value).subscribe({
       next: (data) =>{
         this.response = "You loged in succesfully"
@@ -39,13 +38,16 @@ export class SigninComponent {
     })
   }
 
+  information: any = {}
+
   getLoginInfo(){
     let header = new HttpHeaders({
       "Authorization": `Bearer ${this.cookie.get("token")}`
     })
 
-    this.post.loginInfo(header).subscribe((data) =>{
-      console.log(data)
+    this.post.loginInfo(header).subscribe((data: any) =>{
+      this.information = data
+      this.cookie.set("info", data.id)
     })
   }
 }
