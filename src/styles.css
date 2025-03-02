@@ -62,6 +62,69 @@
     cursor: pointer;
 }
 
+.sign-hero{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #e8e8e8e8;
+}
+
+
+.sign-hero > div{
+    display: flex;
+    background-color: white;
+    max-width: 500px;
+    margin-inline: 10px;
+    width: 100%;
+    justify-content: center;
+}
+
+.signform{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 240px;
+    width: 100%;
+    margin: 10px;
+    margin-block: 40px;
+}
+
+.signform > div{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.signform > div label{
+    font-weight: 100;
+}
+
+.signform > div input{
+    border: 1px solid rgb(143, 143, 143);
+    padding: 5px;
+    outline: none;
+}
+
+.signform > input{
+    border: 1px solid rgb(143, 143, 143);
+    padding: 7px;
+    background-color: #751FFF;
+    color: white;
+    cursor: pointer;
+}
+
+.signform > p{
+    font-weight: 100;
+    font-size: 14px;
+}
+
+.signform > a{
+    font-weight: 100;
+    font-size: 14px;
+}
+
+
 @media only screen and (max-width: 600px) {
     .productCard{
         height: 300px;

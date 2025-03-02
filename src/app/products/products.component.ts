@@ -35,7 +35,6 @@ export class ProductsComponent {
 
   next(){
     this.getCards(this.currentpage + 1)
-    console.log(this.currentpage)
   }
 
   prev(){

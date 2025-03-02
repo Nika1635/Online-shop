@@ -36,7 +36,6 @@ export class DetailsComponent {
     } else {
       this.photoarrindex++
     }
-    console.log(this.photoarrindex)
   }
 
   previous(){
@@ -45,6 +44,5 @@ export class DetailsComponent {
     } else {
       this.photoarrindex--
     }
-    console.log(this.photoarrindex)
   }
 }
