@@ -1,10 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { PostService } from '../post.service';
 import { HttpHeaders } from '@angular/common/http';
-import { SubjectService } from '../subject.service';
 
 @Component({
   selector: 'app-navbar',
@@ -12,10 +11,13 @@ import { SubjectService } from '../subject.service';
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
-export class NavbarComponent {
-  constructor(public cookie: CookieService, public post: PostService){
+export class NavbarComponent implements OnInit{
+  constructor(public cookie: CookieService, public post: PostService){}
+  
+  ngOnInit(): void {
     this.getLoginInfo()
   }
+
   navbar: boolean = false
 
   switch(){
