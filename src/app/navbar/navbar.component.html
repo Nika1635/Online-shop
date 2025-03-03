@@ -34,22 +34,26 @@
             </ul>
             <div>
                 @if (cookie.get("token") == '') {
-                    <div class="login first cart" routerLink="auth/signin">
-                        <p>Sign In</p>
-                    </div>
-                    <div class="login first cart" routerLink="auth/signup">
-                        <p>Create Account</p>
+                    <div class="repo">
+                        <div class="login cart" routerLink="auth/signin">
+                            <p>Sign In</p>
+                        </div>
+                        <div class="login  cart" routerLink="auth/signup">
+                            <p>Create Account</p>
+                        </div>
                     </div>
                 } @else {
-                    <div class="profile">
-                        <img [src]="information.avatar" alt="">
-                        <p>{{information.firstName}}</p>
-                    </div>
-                    <div class="logOut" (click)="logout()">
-                        <p>Log Out</p>
-                    </div>
-                    <div class="cart first">
-                        <i class="fa-solid fa-cart-shopping"></i>
+                    <div class="repo">
+                        <div class="profile">
+                            <img [src]="information.avatar" alt="">
+                            <p>{{information.firstName}}</p>
+                        </div>
+                        <div class="logOut" (click)="logout()">
+                            <p>Log Out</p>
+                        </div>
+                        <div class="cart">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </div>
                     </div>
                 }
             </div>
