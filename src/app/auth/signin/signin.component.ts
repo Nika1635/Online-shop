@@ -32,6 +32,7 @@ export class SigninComponent {
         const response = data as { access_token: string };
         this.cookie.set("token", response.access_token);
         this.router.navigate(["/"])
+        window.location.reload()
       },
       error: (error) => {
         this.response = "Cant sign In"
