@@ -7,16 +7,19 @@
         </ul>
         <div>
             @if (cookie.get("token") == '') {
-                <div class="login first" routerLink="auth/signin">
+                <div class="login first cart" routerLink="auth/signin">
                     <p>Sign In</p>
                 </div>
-                <div class="login first" routerLink="auth/signup">
-                    <p>Sign Up</p>
+                <div class="login first cart" routerLink="auth/signup">
+                    <p>Create Account</p>
                 </div>
             } @else {
                 <div class="profile">
                     <img [src]="information.avatar" alt="">
                     <p>{{information.firstName}}</p>
+                </div>
+                <div class="logOut" (click)="logout()">
+                    <p>Log Out</p>
                 </div>
                 <div class="cart first">
                     <i class="fa-solid fa-cart-shopping"></i>
@@ -31,14 +34,21 @@
             </ul>
             <div>
                 @if (cookie.get("token") == '') {
-                    <div class="login" routerLink="auth/signin">
+                    <div class="login first cart" routerLink="auth/signin">
                         <p>Sign In</p>
                     </div>
-                    <div class="login" routerLink="auth/signup">
-                        <p>Sign Up</p>
+                    <div class="login first cart" routerLink="auth/signup">
+                        <p>Create Account</p>
                     </div>
                 } @else {
-                    <div class="cart">
+                    <div class="profile">
+                        <img [src]="information.avatar" alt="">
+                        <p>{{information.firstName}}</p>
+                    </div>
+                    <div class="logOut" (click)="logout()">
+                        <p>Log Out</p>
+                    </div>
+                    <div class="cart first">
                         <i class="fa-solid fa-cart-shopping"></i>
                     </div>
                 }

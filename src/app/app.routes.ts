@@ -4,11 +4,12 @@ import { ProductsComponent } from './products/products.component';
 import { DetailsComponent } from './details/details.component';
 import { SigninComponent } from './auth/signin/signin.component';
 import { SignupComponent } from './auth/signup/signup.component';
+import { blockGuard } from './block.guard';
 
 export const routes: Routes = [
     {path: "", component: HomeComponent},
     {path: "products", component: ProductsComponent},
     {path: "details/:id", component: DetailsComponent},
-    {path: "auth/signin", component: SigninComponent},
-    {path: "auth/signup", component: SignupComponent}
+    {path: "auth/signin", component: SigninComponent, canActivate: [blockGuard]},
+    {path: "auth/signup", component: SignupComponent, canActivate: [blockGuard]}
 ];

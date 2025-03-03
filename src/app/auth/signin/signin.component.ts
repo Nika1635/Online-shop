@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { PostService } from '../../post.service';
-import {CookieService} from 'ngx-cookie-service';
-import { HttpHeaders } from '@angular/common/http';
+import { CookieService } from 'ngx-cookie-service';
+import { SubjectService } from '../../subject.service';
+
 
 @Component({
   selector: 'app-signin',
@@ -12,7 +13,7 @@ import { HttpHeaders } from '@angular/common/http';
   styleUrl: './signin.component.css'
 })
 export class SigninComponent {
-  constructor(public post: PostService, public cookie: CookieService){
+  constructor(public post: PostService, public cookie: CookieService, public subject: SubjectService, public router: Router){
     
   }
 
@@ -30,24 +31,11 @@ export class SigninComponent {
         this.response = "You loged in succesfully"
         const response = data as { access_token: string };
         this.cookie.set("token", response.access_token);
-        this.getLoginInfo()
+        this.router.navigate(["/"])
       },
       error: (error) => {
         this.response = "Cant sign In"
       }
-    })
-  }
-
-  information: any = {}
-
-  getLoginInfo(){
-    let header = new HttpHeaders({
-      "Authorization": `Bearer ${this.cookie.get("token")}`
-    })
-
-    this.post.loginInfo(header).subscribe((data: any) =>{
-      this.information = data
-      this.cookie.set("info", data.id)
     })
   }
 }

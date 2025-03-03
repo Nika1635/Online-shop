@@ -1,10 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { info } from 'console';
 import { CookieService } from 'ngx-cookie-service';
 import { PostService } from '../post.service';
 import { HttpHeaders } from '@angular/common/http';
+import { SubjectService } from '../subject.service';
 
 @Component({
   selector: 'app-navbar',
@@ -24,6 +24,10 @@ export class NavbarComponent {
 
   information: any = {}
 
+  logout(){
+    this.cookie.delete("token")
+  }
+
   getLoginInfo(){
     let header = new HttpHeaders({
       "Authorization": `Bearer ${this.cookie.get("token")}`
@@ -31,7 +35,8 @@ export class NavbarComponent {
     this.post.loginInfo(header).subscribe((data: any) =>{
       console.log(data)
       this.information = data
-      this.cookie.set("info", data.id)
     })
   }
+
+  
 }
