@@ -14,11 +14,11 @@
                     <p>Create Account</p>
                 </div>
             } @else {
-                <div class="profile">
+                <div class="profile first">
                     <img [src]="information.avatar" alt="">
                     <p>{{information.firstName}}</p>
                 </div>
-                <div class="logOut" (click)="logout()">
+                <div class="logOut first" (click)="logout()">
                     <p>Log Out</p>
                 </div>
                 <div class="cart first">
