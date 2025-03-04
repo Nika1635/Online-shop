@@ -1,9 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { PostService } from '../post.service';
 import { HttpHeaders } from '@angular/common/http';
+import { ApiService } from '../api.service';
+import { Logininfo } from '../interface/logininfo';
 
 @Component({
   selector: 'app-navbar',
@@ -11,11 +13,11 @@ import { HttpHeaders } from '@angular/common/http';
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
-export class NavbarComponent{
-  constructor(public cookie: CookieService, public post: PostService){
-    setTimeout(() => {
-      this.getLoginInfo();
-    }, 500);
+export class NavbarComponent implements OnInit{
+  constructor(public cookie: CookieService, public api: ApiService){}
+
+  ngOnInit(): void {
+    this.getLoginInfo();
   }
 
   navbar: boolean = false
@@ -27,15 +29,14 @@ export class NavbarComponent{
   information: any = {}
 
   logout(){
-    this.cookie.delete("token")
+    this.cookie.set("token", "")
   }
 
   getLoginInfo(){
     let header = new HttpHeaders({
       "Authorization": `Bearer ${this.cookie.get("token")}`
     })
-    this.post.loginInfo(header).subscribe((data: any) =>{
-      console.log(data)
+    this.api.loginInfo(header).subscribe((data: Logininfo) =>{
       this.information = data
     })
   }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { RouterModule } from '@angular/router';
 
@@ -8,8 +8,10 @@ import { RouterModule } from '@angular/router';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent {  
-  constructor(public api: ApiService,){
+export class HomeComponent implements OnInit{  
+  constructor(public api: ApiService,){}
+
+  ngOnInit(): void {
     this.getCards()
   }
 

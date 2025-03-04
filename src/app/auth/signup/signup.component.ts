@@ -1,9 +1,7 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { PostService } from '../../post.service';
-import { error } from 'console';
 
 @Component({
   selector: 'app-signup',
@@ -13,9 +11,7 @@ import { error } from 'console';
 })
 export class SignupComponent {
 
-  constructor(public post: PostService){
-
-  }
+  constructor(public post: PostService){}
 
   public form: FormGroup = new FormGroup({
     firstName: new FormControl ("", [Validators.required, Validators.maxLength(20), Validators.minLength(3)]),

@@ -1,6 +1,7 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, OnInit } from '@angular/core';
 import { ApiService } from '../../api.service';
 import { FormsModule } from '@angular/forms';
+import { Categories } from '../../interface/categories';
 
 @Component({
   selector: 'app-filter',
@@ -8,8 +9,10 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './filter.component.html',
   styleUrl: './filter.component.css'
 })
-export class FilterComponent {
-  constructor(public api: ApiService){
+export class FilterComponent implements OnInit{
+  constructor(public api: ApiService){}
+
+  ngOnInit(): void {
     this.categories()
     this.getBrands()
   }
@@ -31,7 +34,7 @@ export class FilterComponent {
   }
   
   categories(){
-    this.api.categories().subscribe((data) => this.categoriesarr = data)
+    this.api.categories().subscribe((data: Categories[]) => this.categoriesarr = data)
   }
 
   categorietransport(id: number){

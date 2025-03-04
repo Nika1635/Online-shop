@@ -13,9 +13,7 @@ import { SubjectService } from '../../subject.service';
   styleUrl: './signin.component.css'
 })
 export class SigninComponent {
-  constructor(public post: PostService, public cookie: CookieService, public subject: SubjectService, public router: Router){
-    
-  }
+  constructor(public post: PostService, public cookie: CookieService, public subject: SubjectService, public router: Router){}
 
 
   public form: FormGroup = new FormGroup({

@@ -1,5 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Categories } from './interface/categories';
+import { Products } from './interface/products';
+import { Logininfo } from './interface/logininfo';
 
 @Injectable({
   providedIn: 'root'
@@ -28,7 +31,7 @@ export class ApiService {
   }
 
   categories(){
-    return this.api.get(`https://api.everrest.educata.dev/shop/products/categories`)
+    return this.api.get<Categories[]>(`https://api.everrest.educata.dev/shop/products/categories`)
   }
 
   brands(){
@@ -40,6 +43,10 @@ export class ApiService {
   }
 
   getAllProducts(pages: any){
-    return this.api.get(`https://api.everrest.educata.dev/shop/products/all?page_index=${pages}&page_size=15`)
+    return this.api.get<Products[]>(`https://api.everrest.educata.dev/shop/products/all?page_index=${pages}&page_size=15`)
+  }
+
+  loginInfo(data: any){
+    return this.api.get<Logininfo>("https://api.everrest.educata.dev/auth", {headers: data})
   }
 }

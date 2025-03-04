@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { FormsModule } from '@angular/forms';
 import { SearchComponent } from './search/search.component';
 import { FilterComponent } from './filter/filter.component';
 import { RouterModule } from '@angular/router';
+import { Products } from '../interface/products';
 
 @Component({
   selector: 'app-products',
@@ -11,8 +12,10 @@ import { RouterModule } from '@angular/router';
   templateUrl: './products.component.html',
   styleUrl: './products.component.css'
 })
-export class ProductsComponent {
-  constructor(public api: ApiService){
+export class ProductsComponent implements OnInit{
+  constructor(public api: ApiService){}
+
+  ngOnInit(): void {
     this.getCards(this.currentpage)
   }
 
@@ -42,7 +45,7 @@ export class ProductsComponent {
   }
 
   getCards(thispage: number){
-    this.api.getAllProducts(thispage).subscribe((data) => {
+    this.api.getAllProducts(thispage).subscribe((data: Products[]) => {
       this.products = data
       this.pagesize(data)
     })

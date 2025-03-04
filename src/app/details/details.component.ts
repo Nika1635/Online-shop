@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../api.service';
 
@@ -8,10 +8,13 @@ import { ApiService } from '../api.service';
   templateUrl: './details.component.html',
   styleUrl: './details.component.css'
 })
-export class DetailsComponent {
-  constructor(public productid: ActivatedRoute, public api: ApiService){
+export class DetailsComponent implements OnInit {
+  constructor(public productid: ActivatedRoute, public api: ApiService){}
+
+  ngOnInit(): void{
     this.getId()
   }
+
 
   productId: any = ""
   productInfo: any = {} 
