@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Route, Router, RouterModule } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { PostService } from '../post.service';
 import { HttpHeaders } from '@angular/common/http';
@@ -14,7 +14,7 @@ import { Logininfo } from '../interface/logininfo';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent implements OnInit{
-  constructor(public cookie: CookieService, public api: ApiService){}
+  constructor(public cookie: CookieService, public api: ApiService, public router: Router){}
 
   ngOnInit(): void {
     this.getLoginInfo();
@@ -30,6 +30,7 @@ export class NavbarComponent implements OnInit{
 
   logout(){
     this.cookie.set("token", "")
+    this.router.navigate(["/"])
   }
 
   getLoginInfo(){
@@ -38,6 +39,7 @@ export class NavbarComponent implements OnInit{
     })
     this.api.loginInfo(header).subscribe((data: Logininfo) =>{
       this.information = data
+      console.log(data)
     })
   }
 

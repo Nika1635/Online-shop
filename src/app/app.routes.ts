@@ -5,11 +5,14 @@ import { DetailsComponent } from './details/details.component';
 import { SigninComponent } from './auth/signin/signin.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { blockGuard } from './block.guard';
+import { CartComponent } from './cart/cart.component';
+import { ifloggedGuard } from './iflogged.guard';
 
 export const routes: Routes = [
     {path: "", component: HomeComponent},
     {path: "products", component: ProductsComponent},
     {path: "details/:id", component: DetailsComponent},
     {path: "auth/signin", component: SigninComponent, canActivate: [blockGuard]},
-    {path: "auth/signup", component: SignupComponent, canActivate: [blockGuard]}
+    {path: "auth/signup", component: SignupComponent, canActivate: [blockGuard]},
+    {path: "cart", component: CartComponent, canActivate: [ifloggedGuard]}
 ];

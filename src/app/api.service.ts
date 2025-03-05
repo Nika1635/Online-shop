@@ -49,4 +49,8 @@ export class ApiService {
   loginInfo(data: any){
     return this.api.get<Logininfo>("https://api.everrest.educata.dev/auth", {headers: data})
   }
+
+  cartInfo(data: any){
+    return this.api.get("https://api.everrest.educata.dev/shop/cart", {headers: data})
+  }
 }
