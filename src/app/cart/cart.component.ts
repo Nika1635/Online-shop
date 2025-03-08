@@ -24,7 +24,6 @@ export class CartComponent {
         this.api.cartInfo(header).subscribe({
           next: (data) => {
             this.information = data
-            console.log(data)
           },
 
           error: (error) =>{

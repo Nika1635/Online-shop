@@ -29,7 +29,6 @@ export class DetailsComponent implements OnInit {
     this.api.getProductDetails(this.productId.id).subscribe((data) => {
       this.productInfo = data
       this.productimage = this.productInfo.images
-      console.log(this.productInfo)
     })
   }
 

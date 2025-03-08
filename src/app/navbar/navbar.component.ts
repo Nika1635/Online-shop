@@ -39,7 +39,6 @@ export class NavbarComponent implements OnInit{
     })
     this.api.loginInfo(header).subscribe((data: Logininfo) =>{
       this.information = data
-      console.log(data)
     })
   }
 
