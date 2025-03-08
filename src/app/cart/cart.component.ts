@@ -15,40 +15,61 @@ export class CartComponent {
     this.getCartInfo()
   }
 
-  information: any;
+  information: any = {}
+  products!: any;
+  productsDetails: any = []
   form: any = {}
 
-  getCartInfo(){
-        let header = new HttpHeaders({
-          "Authorization": `Bearer ${this.cookie.get("token")}`
-        })
-        this.api.cartInfo(header).subscribe({
-          next: (data) => {
-            this.information = data
-            console.log(this.information)
-          },
-
-          error: (error) =>{
-            
-          }        
-    })
-
-    this.information
-  }
-
-  deleteItem(id: string){
+  getCartInfo() {
     let header = new HttpHeaders({
-      Authorization: `Bearer ${this.cookie.get("token")}`,
+      Authorization: `Bearer ${this.cookie.get("token")}`
     })
-    this.form = {
-      id: id,
-    }
-    console.log(this.form)
-    this.post.deleteCartProduct(header, this.form).subscribe({
-      next: () => {
-
+  
+    this.api.cartInfo(header).subscribe({
+      next: (data) => {
+        this.information = data
+        this.products = this.information.products
+        console.log(data)
+  
+        this.productsDetails = []
+  
+        this.products.forEach((element: any, index: any) => {
+          this.api.getProductDetails(element.productId).subscribe((cardinfo: any) => {
+            this.productsDetails.push({
+              title: cardinfo.title,
+              describtion: cardinfo.description,
+              price: cardinfo.price.current,
+              photo: cardinfo.thumbnail,
+              quantity: this.products[index].quantity,
+              id: cardinfo._id
+            })
+          })
+        })
+      },
+  
+      error: (error) => {
+        console.error("Error fetching cart info", error)
       }
     })
-    this.getCartInfo()
+  }
+
+  deleteItem(id: string) {
+    let header = new HttpHeaders({
+      Authorization: `Bearer ${this.cookie.get("token")}`,
+    });
+  
+    this.form = { id: id };
+    console.log(this.form);
+  
+    this.post.deleteCartProduct(header, this.form).subscribe({
+      next: () => {
+        this.productsDetails = []
+        this.getCartInfo()
+        alert("Item deleted successfully")
+      },
+      error: (error) => {
+        console.error("Error deleting item", error);
+      },
+    });
   }
 }
