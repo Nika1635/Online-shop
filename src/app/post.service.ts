@@ -20,5 +20,10 @@ export class PostService {
   }
 
   patchCart(body: any, form: any) {
-    return this.post.patch("https://api.everrest.educata.dev/shop/cart/product", form, { headers: body } )}
+    return this.post.patch("https://api.everrest.educata.dev/shop/cart/product", form, { headers: body } )
+  }
+
+  deleteCartProduct(body: any, form: any){return this.post.delete("https://api.everrest.educata.dev/shop/cart/product", { headers: body, body: form})
+
+  }
 }

@@ -22,6 +22,13 @@
                 <input type="number" value="1" name="quantity" [(ngModel)] = "quantity">
             </div>
             <button (click) = "postCart()">Add To Cart</button>
+            @if (message == "") {
+                
+            }@else if(message == "succesfully added to cart") {
+                <p class="trueresponse">{{message}}</p>
+            }@else{
+                <p class="falseresponse">{{message}}</p>
+            }
             <div class="description">
                 <p>Description</p>
                 <p>{{productInfo.description}}</p>

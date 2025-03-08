@@ -16,6 +16,7 @@ export class CartComponent {
   }
 
   information: any;
+  form: any = {}
 
   getCartInfo(){
         let header = new HttpHeaders({
@@ -30,11 +31,24 @@ export class CartComponent {
           error: (error) =>{
             
           }        
-
     })
+
+    this.information
   }
 
-  deleteItem(){
+  deleteItem(id: string){
+    let header = new HttpHeaders({
+      Authorization: `Bearer ${this.cookie.get("token")}`,
+    })
+    this.form = {
+      id: id,
+    }
+    console.log(this.form)
+    this.post.deleteCartProduct(header, this.form).subscribe({
+      next: () => {
 
+      }
+    })
+    this.getCartInfo()
   }
 }

@@ -143,10 +143,12 @@ input:disabled{
 
 .trueresponse{
     color: green;
+    text-transform: capitalize;
 }
 
 .falseresponse{
     color: red;
+    text-transform: capitalize;
 }
 
 

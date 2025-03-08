@@ -3,14 +3,13 @@ import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../api.service';
 import { PostService } from '../post.service';
 import { FormsModule } from '@angular/forms';
-import { identity } from 'rxjs';
 import { CookieService } from 'ngx-cookie-service';
 import { HttpHeaders } from '@angular/common/http';
-import { error } from 'console';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-details',
-  imports: [ FormsModule ],
+  imports: [ FormsModule, CommonModule ],
   templateUrl: './details.component.html',
   styleUrl: './details.component.css'
 })
@@ -27,6 +26,7 @@ export class DetailsComponent implements OnInit {
   productimage: any = []
   photoarrindex: number = 1
   quantity: number = 1
+  message!: string;
   
   form: any = {}
   
@@ -55,14 +55,15 @@ export class DetailsComponent implements OnInit {
   
     this.post.createCart(header, this.form).subscribe({
       next: () => {
+        this.message = "succesfully added to cart"
       },
       error: (erro) => {
         this.post.patchCart(header, this.form).subscribe({
           next: () => {
-            alert("succesfully added to cart")
+            this.message = "succesfully added to cart"
           },
           error: (erro) => {
-            alert("cant add to cart")
+            this.message = "out of stock"
           }
         })
       }
