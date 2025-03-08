@@ -19,9 +19,9 @@
             <p>In Stock: {{productInfo.stock}}</p>
             <div class="quantity">
                 <label for="quantity">Quantity</label>
-                <input type="number" value="1" name="quantity">
+                <input type="number" value="1" name="quantity" [(ngModel)] = "quantity">
             </div>
-            <button>Add To Cart</button>
+            <button (click) = "postCart()">Add To Cart</button>
             <div class="description">
                 <p>Description</p>
                 <p>{{productInfo.description}}</p>

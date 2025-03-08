@@ -15,7 +15,10 @@ export class PostService {
     return this.post.post("https://api.everrest.educata.dev/auth/sign_in", body)
   }
 
-  createCart(body: any){
-    return this.post.post("https://api.everrest.educata.dev/shop/cart/product", body)
+  createCart(body: any, form: any){
+    return this.post.post("https://api.everrest.educata.dev/shop/cart/product", form, { headers: body })
   }
+
+  patchCart(body: any, form: any) {
+    return this.post.patch("https://api.everrest.educata.dev/shop/cart/product", form, { headers: body } )}
 }

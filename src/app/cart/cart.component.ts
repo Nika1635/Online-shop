@@ -24,6 +24,7 @@ export class CartComponent {
         this.api.cartInfo(header).subscribe({
           next: (data) => {
             this.information = data
+            console.log(this.information)
           },
 
           error: (error) =>{
@@ -31,5 +32,9 @@ export class CartComponent {
           }        
 
     })
+  }
+
+  deleteItem(){
+
   }
 }
