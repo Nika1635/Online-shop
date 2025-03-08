@@ -28,9 +28,7 @@ export class CartComponent {
     this.api.cartInfo(header).subscribe({
       next: (data) => {
         this.information = data
-        this.products = this.information.products
-        console.log(data)
-  
+        this.products = this.information.products  
         this.productsDetails = []
   
         this.products.forEach((element: any, index: any) => {
@@ -48,7 +46,6 @@ export class CartComponent {
       },
   
       error: (error) => {
-        console.error("Error fetching cart info", error)
       }
     })
   }
@@ -59,7 +56,6 @@ export class CartComponent {
     });
   
     this.form = { id: id };
-    console.log(this.form);
   
     this.post.deleteCartProduct(header, this.form).subscribe({
       next: () => {
@@ -68,8 +64,8 @@ export class CartComponent {
         alert("Item deleted successfully")
       },
       error: (error) => {
-        console.error("Error deleting item", error);
+        alert("Error deleting item")
       },
-    });
+    })
   }
 }

@@ -37,7 +37,6 @@ export class DetailsComponent implements OnInit {
         id: this.productId.id,
         quantity: this.quantity
       }
-      console.log(this.form)
     })
   
     this.api.getProductDetails(this.productId.id).subscribe((data) => {
@@ -48,7 +47,6 @@ export class DetailsComponent implements OnInit {
 
   postCart(){
     this.getId()
-    console.log()
     let header = new HttpHeaders({
         Authorization: `Bearer ${this.cookie.get("token")}`,
     })
