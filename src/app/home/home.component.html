@@ -60,7 +60,7 @@
                 <div class="gallery-cell centerCard">
                     <div class="productCard" routerLink="/details/{{item._id}}">
                         <div>
-                            <img class="cardImg" [src]="item.images[0]" alt="">
+                            <img class="cardImg" [src]="item.thumbnail" alt="">
                             <p class="cardname">{{item.title}}</p>
                             <div class="priceBar">
                                 @if (item.price.beforeDiscount > item.price.current) {
