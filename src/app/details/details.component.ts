@@ -61,7 +61,13 @@ export class DetailsComponent implements OnInit {
             this.message = "succesfully added to cart"
           },
           error: (erro) => {
-            this.message = "out of stock"
+            if(this.cookie.get("token") == ""){
+              this.message = "you are not registered"
+            } else if(this.productInfo.stock == 0 ){
+              this.message = "out of stock"
+            }else{
+              this.message = "error"
+            }
           }
         })
       }
