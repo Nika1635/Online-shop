@@ -5,6 +5,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { HttpHeaders } from '@angular/common/http';
 import { ApiService } from '../api.service';
 import { Logininfo } from '../interface/logininfo';
+import { info } from 'console';
 
 @Component({
   selector: 'app-navbar',

@@ -25,12 +25,7 @@ export interface Products {
       rating: number;
       brand: string;
       warranty: number;
-      images: [
-        'https://i.imgur.com/6c1EkHS.jpg',
-        'https://i.imgur.com/6WlfNht.jpg',
-        'https://i.imgur.com/HU0BCBV.jpg',
-        'https://i.imgur.com/RXROBLE.jpg'
-      ];
+      images: [];
     }
   ];
 }

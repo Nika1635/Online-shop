@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { Categories } from './interface/categories';
 import { Products } from './interface/products';
 import { Logininfo } from './interface/logininfo';
+import { Cart } from './interface/cart';
+import { Productinfo } from './interface/productinfo';
 
 @Injectable({
   providedIn: 'root'
@@ -39,11 +41,11 @@ export class ApiService {
   }
 
   getProductDetails(id: string){
-    return this.api.get(`https://api.everrest.educata.dev/shop/products/id/${id}`)
+    return this.api.get<Productinfo>(`https://api.everrest.educata.dev/shop/products/id/${id}`)
   }
 
   getAllProducts(pages: any){
-    return this.api.get<Products[]>(`https://api.everrest.educata.dev/shop/products/all?page_index=${pages}&page_size=15`)
+    return this.api.get<Products>(`https://api.everrest.educata.dev/shop/products/all?page_index=${pages}&page_size=15`)
   }
 
   loginInfo(data: any){
@@ -51,6 +53,6 @@ export class ApiService {
   }
 
   cartInfo(data: any){
-    return this.api.get("https://api.everrest.educata.dev/shop/cart", {headers: data})
+    return this.api.get<Cart>("https://api.everrest.educata.dev/shop/cart", {headers: data})
   }
 }

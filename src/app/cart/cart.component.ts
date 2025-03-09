@@ -3,6 +3,8 @@ import { ApiService } from '../api.service';
 import { CookieService } from 'ngx-cookie-service';
 import { HttpHeaders } from '@angular/common/http';
 import { PostService } from '../post.service';
+import { Cart } from '../interface/cart';
+import { Productinfo } from '../interface/productinfo';
 
 @Component({
   selector: 'app-cart',
@@ -26,13 +28,13 @@ export class CartComponent {
     })
   
     this.api.cartInfo(header).subscribe({
-      next: (data) => {
+      next: (data: Cart) => {
         this.information = data
         this.products = this.information.products  
         this.productsDetails = []
   
         this.products.forEach((element: any, index: any) => {
-          this.api.getProductDetails(element.productId).subscribe((cardinfo: any) => {
+          this.api.getProductDetails(element.productId).subscribe((cardinfo: Productinfo) => {
             this.productsDetails.push({
               title: cardinfo.title,
               describtion: cardinfo.description,

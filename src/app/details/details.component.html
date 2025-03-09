@@ -8,12 +8,12 @@
         <div>
             <h1>{{productInfo.title}}</h1>
             <div class="price">
-            @if (productInfo.price.beforeDiscount > productInfo.price.current) {
+            @if (productInfo.price?.beforeDiscount > productInfo.price?.current) {
                 <p class="beforeDiscount">${{productInfo.price.beforeDiscount }}</p>
                 <p class="currentPrice">${{productInfo.price.current}}</p>
             }
             @else {
-                <p class="currentPrice">${{productInfo.price.current}}</p>
+                <p class="currentPrice">${{productInfo.price?.current}}</p>
             }
             </div>
             <p>In Stock: {{productInfo.stock}}</p>

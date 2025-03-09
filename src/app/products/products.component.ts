@@ -45,7 +45,7 @@ export class ProductsComponent implements OnInit{
   }
 
   getCards(thispage: number){
-    this.api.getAllProducts(thispage).subscribe((data: Products[]) => {
+    this.api.getAllProducts(thispage).subscribe((data: Products) => {
       this.products = data
       this.pagesize(data)
     })

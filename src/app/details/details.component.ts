@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 import { HttpHeaders } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { Productinfo } from '../interface/productinfo';
 
 @Component({
   selector: 'app-details',
@@ -39,7 +40,7 @@ export class DetailsComponent implements OnInit {
       }
     })
   
-    this.api.getProductDetails(this.productId.id).subscribe((data) => {
+    this.api.getProductDetails(this.productId.id).subscribe((data: Productinfo) => {
       this.productInfo = data
       this.productimage = this.productInfo.images
     })
