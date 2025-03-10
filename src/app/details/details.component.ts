@@ -4,7 +4,6 @@ import { ApiService } from '../api.service';
 import { PostService } from '../post.service';
 import { FormsModule } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
-import { HttpHeaders } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { Productinfo } from '../interface/productinfo';
 

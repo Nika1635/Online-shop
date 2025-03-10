@@ -29,29 +29,29 @@
         </div>
         <div class="responsive" [ngClass]="navbar ? 'show' : 'none' ">
             <ul class="navigation">
-                <li><a routerLink="/">Home</a></li>
-                <li><a routerLink="/products">Products</a></li>
+                <li><a routerLink="/" (click) = "hide()">Home</a></li>
+                <li><a routerLink="/products" (click) = "hide()">Products</a></li>
             </ul>
             <div>
                 @if (cookie.get("token") == '') {
                     <div class="repo">
-                        <div class="login cart" routerLink="auth/signin">
+                        <div class="login cart" routerLink="auth/signin" (click) = "hide()">
                             <p>Sign In</p>
                         </div>
-                        <div class="login  cart" routerLink="auth/signup">
+                        <div class="login  cart" routerLink="auth/signup" (click) = "hide()">
                             <p>Create Account</p>
                         </div>
                     </div>
                 } @else {
                     <div class="repo">
-                        <div class="profile">
+                        <div class="profile" (click) = "hide()">
                             <img [src]="information.avatar" alt="">
                             <p>{{information.firstName}}</p>
                         </div>
-                        <div class="logOut" (click)="logout()">
+                        <div class="logOut" (click)="logout()" (click) = "hide()">
                             <p>Log Out</p>
                         </div>
-                        <div class="cart" routerLink="/cart">
+                        <div class="cart" routerLink="/cart" (click) = "hide()">
                             <i class="fa-solid fa-cart-shopping"></i>
                         </div>
                     </div>
