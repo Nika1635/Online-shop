@@ -48,11 +48,11 @@ export class ApiService {
     return this.api.get<Products>(`https://api.everrest.educata.dev/shop/products/all?page_index=${pages}&page_size=15`)
   }
 
-  loginInfo(data: any){
-    return this.api.get<Logininfo>("https://api.everrest.educata.dev/auth", {headers: data})
+  loginInfo(){
+    return this.api.get<Logininfo>("https://api.everrest.educata.dev/auth",)
   }
 
-  cartInfo(data: any){
-    return this.api.get<Cart>("https://api.everrest.educata.dev/shop/cart", {headers: data})
+  cartInfo(){
+    return this.api.get<Cart>("https://api.everrest.educata.dev/shop/cart",)
   }
 }

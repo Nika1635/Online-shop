@@ -34,10 +34,7 @@ export class NavbarComponent implements OnInit{
   }
 
   getLoginInfo(){
-    let header = new HttpHeaders({
-      "Authorization": `Bearer ${this.cookie.get("token")}`
-    })
-    this.api.loginInfo(header).subscribe((data: Logininfo) =>{
+    this.api.loginInfo().subscribe((data: Logininfo) =>{
       this.information = data
     })
   }

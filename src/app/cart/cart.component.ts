@@ -23,11 +23,7 @@ export class CartComponent {
   form: any = {}
 
   getCartInfo() {
-    let header = new HttpHeaders({
-      Authorization: `Bearer ${this.cookie.get("token")}`
-    })
-  
-    this.api.cartInfo(header).subscribe({
+    this.api.cartInfo().subscribe({
       next: (data: Cart) => {
         this.information = data
         this.products = this.information.products  

@@ -15,15 +15,16 @@ export class PostService {
     return this.post.post("https://api.everrest.educata.dev/auth/sign_in", body)
   }
 
-  createCart(body: any, form: any){
-    return this.post.post("https://api.everrest.educata.dev/shop/cart/product", form, { headers: body })
+  createCart(form: any){
+    return this.post.post("https://api.everrest.educata.dev/shop/cart/product", form)
   }
 
-  patchCart(body: any, form: any) {
-    return this.post.patch("https://api.everrest.educata.dev/shop/cart/product", form, { headers: body } )
+  patchCart(form: any) {
+    return this.post.patch("https://api.everrest.educata.dev/shop/cart/product", form )
   }
 
-  deleteCartProduct(body: any, form: any){return this.post.delete("https://api.everrest.educata.dev/shop/cart/product", { headers: body, body: form})
+  deleteCartProduct(body: any, form: any){
+    return this.post.delete("https://api.everrest.educata.dev/shop/cart/product", { headers: body, body: form})
 
   }
 }

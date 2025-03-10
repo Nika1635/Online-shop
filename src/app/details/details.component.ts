@@ -48,16 +48,13 @@ export class DetailsComponent implements OnInit {
 
   postCart(){
     this.getId()
-    let header = new HttpHeaders({
-        Authorization: `Bearer ${this.cookie.get("token")}`,
-    })
   
-    this.post.createCart(header, this.form).subscribe({
+    this.post.createCart(this.form).subscribe({
       next: () => {
         this.message = "succesfully added to cart"
       },
       error: (erro) => {
-        this.post.patchCart(header, this.form).subscribe({
+        this.post.patchCart(this.form).subscribe({
           next: () => {
             this.message = "succesfully added to cart"
           },
