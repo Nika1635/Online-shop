@@ -5,12 +5,22 @@ import { Products } from './interface/products';
 import { Logininfo } from './interface/logininfo';
 import { Cart } from './interface/cart';
 import { Productinfo } from './interface/productinfo';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
   constructor(public api: HttpClient) {}
+  public isLoading: BehaviorSubject<boolean> = new BehaviorSubject(false)
+
+  startLoading() {
+    this.isLoading.next(true)
+  }
+
+  stopLoading() {
+    this.isLoading.next(false)
+  }
 
   getCardById(index: number, size: number){
     return this.api.get(`https://api.everrest.educata.dev/shop/products/all?page_index=${index}&page_size=${size}`)
