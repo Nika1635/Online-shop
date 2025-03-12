@@ -14,7 +14,7 @@
                     <p>Create Account</p>
                 </div>
             } @else {
-                <div class="profile first">
+                <div class="profile first" routerLink="/profile">
                     <img [src]="information.avatar" alt="">
                     <p>{{information.firstName}}</p>
                 </div>
@@ -44,7 +44,7 @@
                     </div>
                 } @else {
                     <div class="repo">
-                        <div class="profile" (click) = "hide()">
+                        <div class="profile" (click) = "hide()" routerLink="/profile">
                             <img [src]="information.avatar" alt="">
                             <p>{{information.firstName}}</p>
                         </div>

@@ -8,6 +8,7 @@ export const ifloggedGuard: CanActivateFn = (route, state) => {
   
     if(cookie.get("token") == ""){
       router.navigate(["/"])
+      alert("sign in or register")
       return false;
     }else{
       return true;

@@ -365,4 +365,29 @@ button{
         justify-content: center;
         align-items: center;
     }
+
+    .dealsHero > p:nth-child(1){
+        height: 25px;
+        border-radius: 10px;
+        font-size: 15px;
+    }
+    
+    .dealsHero > p:nth-child(2){
+        font-size: 35px;
+        font-weight: 500;
+    }
+    
+    .dealsHero > p:nth-child(3){
+        font-size: 15px;
+    }
+
+    
+    .dealSection{
+        padding: 25px;
+    }
+
+
+    .information{
+        padding: 25px;
+    }
 }
