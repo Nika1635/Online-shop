@@ -18,7 +18,7 @@
                     <img [src]="information.avatar" alt="">
                     <p>{{information.firstName}}</p>
                 </div>
-                <div class="logOut first" (click)="logout()">
+                <div class="logOut first" (click)="logout()" routerLink="/">
                     <p>Log Out</p>
                 </div>
                 <div class="cart first" routerLink="/cart">
@@ -48,7 +48,7 @@
                             <img [src]="information.avatar" alt="">
                             <p>{{information.firstName}}</p>
                         </div>
-                        <div class="logOut" (click)="logout()" (click) = "hide()">
+                        <div class="logOut" (click)="logout()" (click) = "hide()" routerLink="/">
                             <p>Log Out</p>
                         </div>
                         <div class="cart" routerLink="/cart" (click) = "hide()">

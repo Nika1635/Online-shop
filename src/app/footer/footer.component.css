@@ -7,10 +7,20 @@
     gap: 50px;
 }
 
+.payingMethodCont > p{
+    text-align: center;
+}
+
 .payingMethodCont > div{
     display: flex;
     gap: 40px;
     flex-wrap: wrap;
     margin-inline: 20px;
     justify-content: center;
+}
+
+@media only screen and (max-width: 380px) {
+    img{
+        width: 40px;
+    }
 }

@@ -27,13 +27,27 @@ export class NavbarComponent implements OnInit{
   information: any = {}
 
   logout(){
-    this.cookie.set("token", "")
     this.router.navigate(["/"])
+    setTimeout(() => {
+      this.cookie.delete("token");
+    }, 100);
+    setTimeout(() => {
+      window.location.reload();
+    }, 100);
   }
 
   getLoginInfo(){
-    this.api.loginInfo().subscribe((data: Logininfo) =>{
-      this.information = data
+    this.api.loginInfo().subscribe({
+      next: (data: Logininfo) =>{
+        this.information = data
+        console.log(data)
+      },
+      error: (error) => {
+        if(error.status == 409){
+          alert("your email is not verified")
+          this.logout()
+        }
+      }
     })
   }
 
