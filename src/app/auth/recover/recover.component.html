@@ -5,7 +5,7 @@
                 <label for="">Email</label>
                 <input type="email" formControlName="email">
             </div>
-            <input type="submit" [disabled]="form.invalid">
+            <input type="submit" [disabled]="form.invalid" (click) = "recover()">
         </form>
     </div>
 </div>

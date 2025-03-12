@@ -19,7 +19,7 @@ export class PasswordresetComponent {
   })
 
   resetpassword(){
-    this.post.resetPassword(this.cookie.get("token"), this.form.value).subscribe({
+    this.post.resetPassword(`${this.cookie.get("token")}`, this.form.value).subscribe({
       next: (data) => {
         console.log(data)
       },
