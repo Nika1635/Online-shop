@@ -30,8 +30,4 @@ export class PostService {
   recoveryEmail(form: any){
     return this.post.post("https://api.everrest.educata.dev/auth/recovery", form)
   }
-
-  resetPassword(token: string, form: any){
-    return this.post.patch("https://api.everrest.educata.dev/auth/change_password", {headers: token, body: form})
-  }
 }
