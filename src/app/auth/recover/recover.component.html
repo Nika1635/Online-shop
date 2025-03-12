@@ -1,0 +1,11 @@
+<div class="sign-hero">
+    <div>
+        <form class="signform" [formGroup]="form">
+            <div>
+                <label for="">Email</label>
+                <input type="email" formControlName="email">
+            </div>
+            <input type="submit" [disabled]="form.invalid">
+        </form>
+    </div>
+</div>
