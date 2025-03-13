@@ -5,6 +5,7 @@ import { HttpHeaders } from '@angular/common/http';
 import { PostService } from '../post.service';
 import { Cart } from '../interface/cart';
 import { Productinfo } from '../interface/productinfo';
+import { error } from 'node:console';
 
 @Component({
   selector: 'app-cart',
@@ -21,10 +22,12 @@ export class CartComponent {
   products!: any;
   productsDetails: any = []
   form: any = {}
+  nocart!: boolean
 
   getCartInfo() {
     this.api.cartInfo().subscribe({
       next: (data: Cart) => {
+        this.nocart = true
         this.information = data
         this.products = this.information.products  
         this.productsDetails = []
@@ -44,6 +47,8 @@ export class CartComponent {
       },
   
       error: (error) => {
+        this.nocart = false
+        alert(`Error: ${error.error.error}`)
       }
     })
   }
@@ -65,5 +70,17 @@ export class CartComponent {
         alert("Error deleting item")
       },
     })
+  }
+
+  removeCart(){
+    this.post.removeCart(this.cookie.get("token")).subscribe({
+      next: (data) => {
+        console.log(data)
+        this.productsDetails = []
+      },
+      error: (error) => {
+      }
+    })
+  this.getCartInfo()
   }
 }

@@ -5,10 +5,12 @@ import { finalize } from 'rxjs';
 
 export const loaderInterceptor: HttpInterceptorFn = (req, next) => {
   const loader = inject(ApiService)
-  loader.startLoading()
+  
+  setTimeout(() => loader.startLoading())
+
   return next(req).pipe(
-    finalize( () => {
-      loader.stopLoading()
-    } )
-  );
-};
+    finalize(() => {
+      setTimeout(() => loader.stopLoading())
+    })
+  )
+}

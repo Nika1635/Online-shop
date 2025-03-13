@@ -30,4 +30,8 @@ export class PostService {
   recoveryEmail(form: any){
     return this.post.post("https://api.everrest.educata.dev/auth/recovery", form)
   }
+
+  removeCart(form: any){
+    return this.post.delete("https://api.everrest.educata.dev/shop/cart", form)
+  }
 }

@@ -18,5 +18,10 @@
     <div class="cart-total">
         <h3>Total: ${{information.total?.price.current}}</h3>
         <button class="checkout">Proceed to Checkout</button>
+        @if(nocart == true){
+            <button class="remove" (click) = "removeCart()">Delete Cart</button>
+        }@else{
+
+        }
     </div>
 </div>

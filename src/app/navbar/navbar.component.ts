@@ -30,17 +30,16 @@ export class NavbarComponent implements OnInit{
     this.router.navigate(["/"])
     setTimeout(() => {
       this.cookie.delete("token");
-    }, 100);
+    }, 100)
     setTimeout(() => {
       window.location.reload();
-    }, 100);
+    }, 100)
   }
 
   getLoginInfo(){
     this.api.loginInfo().subscribe({
       next: (data: Logininfo) =>{
         this.information = data
-        console.log(data)
       },
       error: (error) => {
         if(error.status == 409){

@@ -18,6 +18,8 @@ export class AppComponent {
     this.loader()
   }
 
+  
+
   public isLoading: any
 
   loader() {
