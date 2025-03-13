@@ -4,6 +4,9 @@
             <div>
                 <label for="">Email</label>
                 <input type="email" formControlName="email">
+                @if (form.get("email")?.invalid && form.get("email")?.dirty) {
+                    <p>You must enter your email!</p>
+                }
             </div>
             <div>
                 <label for="">Password</label>

@@ -5,3 +5,14 @@
     background-color: #e8e8e8e8;
     padding-block: 50px;
 }
+
+
+.trueresponse{
+    color: green;
+    text-transform: capitalize;
+}
+
+.falseresponse{
+    color: red;
+    text-transform: capitalize;
+}

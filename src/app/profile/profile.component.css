@@ -18,54 +18,21 @@
 
 .herochild > img {
     width: 50%;
+    aspect-ratio: 1 / 1; /* Ensures the image remains a square */
     border-radius: 50%;
-    object-fit: contain;
+    object-fit: cover;
+    justify-content: center;
+    align-items: center;
 }
 
 .herochild > div {
     width: 50%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     font-weight: 100;
     gap: 15px;
     letter-spacing: 2px;
-}
-
-.buttons{
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.buttons > button{
-    padding: 10px;
-    border-radius: 30px;
-}
-
-.reset{
-    background-color: blueviolet;
-    border: 1px solid blueviolet;
-    color: white;
-    transition: 0.4s;
-    cursor: pointer;
-}
-
-.reset:hover{
-    background-color: transparent;
-    color: blueviolet;
-}
-
-.delete{
-    background-color: red;
-    border: 1px solid red;
-    color: white;
-    transition: 0.4s;
-    cursor: pointer;
-}
-
-.delete:hover{
-    background-color: transparent;
-    color: red;
 }
 
 @media only screen and (max-width: 1000px) {

@@ -16,11 +16,19 @@ export class RecoverComponent {
     email: new FormControl ("", [Validators.required, Validators.email]),
   })
 
+  response: any = ""
+
   recover() { {
     console.log(this.form)
     this.post.recoveryEmail(this.form.value).subscribe({
-      next: (data) => console.log("Success:", data),
-      error: (error) => console.error("Error:", error)
+      next: (data) => {
+        console.log(data)
+        this.response = "If we find the verified email in the database, we will send a recovery mail"
+      },
+      error: (error) => {
+        console.log(error)
+        this.response = "Cant send email"
+      }
     });
   }
   }

@@ -4,6 +4,16 @@
             <div>
                 <label for="">Email</label>
                 <input type="email" formControlName="email">
+                @if (form.get("email")?.invalid && form.get("email")?.dirty) {
+                    <p>You must enter your email!</p>
+                }
+                @if (response == "") {
+                
+                }@else if(response == "If we find the verified email in the database, we will send a recovery mail") {
+                    <p class="trueresponse">If we find the verified email in the database, we will send a recovery mail</p>
+                }@else if(response == "Cant send email") {
+                    <p class="falseresponse">Cant send email</p>
+                }
             </div>
             <input type="submit" [disabled]="form.invalid" (click) = "recover()">
         </form>
