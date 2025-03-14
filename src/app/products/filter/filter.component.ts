@@ -31,6 +31,7 @@ export class FilterComponent implements OnInit{
 
   allProducts(){
     this.allProductss.emit()
+    this.selectedBrandIndex = null
   }
   
   categories(){
@@ -39,6 +40,7 @@ export class FilterComponent implements OnInit{
 
   categorietransport(id: number){
     this.transportcategorie.emit(id)
+    this.selectedBrandIndex = NaN
   }
 
   getBrands(){
@@ -58,4 +60,10 @@ export class FilterComponent implements OnInit{
     })
   }
 
+
+  selectedBrandIndex: number | null = null;
+
+  selectBrand(index: number) {
+    this.selectedBrandIndex = index;
+  }
 }

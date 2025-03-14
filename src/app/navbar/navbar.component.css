@@ -13,6 +13,11 @@ nav{
     cursor: pointer;
 }
 
+.active-link {
+    font-weight: bold;
+    color: red;
+}
+
 .top{
     display: flex;
     height: 75px;

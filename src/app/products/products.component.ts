@@ -16,7 +16,7 @@ export class ProductsComponent implements OnInit{
   constructor(public api: ApiService){}
 
   ngOnInit(): void {
-    this.getCards(this.currentpage)
+    this.getCards(this.currentpage, this.pageSize)
   }
 
   products: any = []
@@ -37,15 +37,15 @@ export class ProductsComponent implements OnInit{
   }
 
   next(){
-    this.getCards(this.currentpage + 1)
+    this.getCards(this.currentpage + 1, this.pageSize)
   }
 
   prev(){
     this.currentpage = this.currentpage - 1
   }
 
-  getCards(thispage: number){
-    this.api.getAllProducts(thispage).subscribe((data: Products) => {
+  getCards(thispage: number, pagesize: number){
+    this.api.getAllProducts(thispage, pagesize).subscribe((data: Products) => {
       this.products = data
       this.pagesize(data)
     })

@@ -4,6 +4,18 @@
     background-color: #E8E8E8;
 }
 
+.broswe p.selected {
+    color: #333;
+    font-weight: bold;
+}
+
+.sortBy{
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid #979797;
+    outline: none;
+}
+
 .ptoductssection{
     display: flex;
     flex-wrap: wrap;

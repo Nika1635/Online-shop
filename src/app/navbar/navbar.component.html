@@ -2,8 +2,8 @@
     <div class="top">
         <h1 id="mainName" routerLink="/">TechShop</h1>
         <ul class="navigation">
-            <li><a routerLink="/">Home</a></li>
-            <li><a routerLink="/products">Products</a></li>
+            <li><a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Home</a></li>
+            <li><a routerLink="/products" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Products</a></li>
         </ul>
         <div>
             @if (cookie.get("token") == '') {

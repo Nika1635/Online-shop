@@ -6,13 +6,20 @@
     font-weight: 300;
 }
 
-.brands > li {
-    cursor: pointer;
+.brands li.selected {
+    color: #333;
+    font-weight: bold;
 }
 
-.brands li{
+.brands > li {
+    cursor: pointer;
+    transition: 0.4s;
     text-transform: capitalize;
     list-style-type: none;
+}
+
+.brands li:hover{
+    color: blueviolet;
 }
 
 .categoriebutton{

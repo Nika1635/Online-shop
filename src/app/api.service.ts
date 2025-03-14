@@ -54,8 +54,8 @@ export class ApiService {
     return this.api.get<Productinfo>(`https://api.everrest.educata.dev/shop/products/id/${id}`)
   }
 
-  getAllProducts(pages: any){
-    return this.api.get<Products>(`https://api.everrest.educata.dev/shop/products/all?page_index=${pages}&page_size=15`)
+  getAllProducts(pages: any, size: number){
+    return this.api.get<Products>(`https://api.everrest.educata.dev/shop/products/all?page_index=${pages}&page_size=${size}`)
   }
 
   loginInfo(){

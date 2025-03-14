@@ -2,9 +2,9 @@
     <h1>Browse by brand</h1>
     <hr>
     <ul class="brands">
-        <li (click)="allProducts()">All Products</li>
+        <li (click)="allProducts()" [class.selected]="selectedBrandIndex === null">All Products</li>
         @for (item of brands; track $index) {
-            <li (click)="filterByBrands(item)">{{item}}</li>
+            <li (click)="filterByBrands(item)" (click)="selectBrand(item)"  [class.selected]="selectedBrandIndex === item" >{{item}}</li>
         }
     </ul>
 </div>
@@ -13,7 +13,7 @@
     <hr>
     <div class="categories">
         @for (item of categoriesarr; track $index) {
-            <button class="categoriebutton" (click)="categorietransport(item.id)"><img [src]="item.image" alt=""></button>
+            <button class="categoriebutton" (click)="categorietransport(item.id)" ><img [src]="item.image" alt=""></button>
         }
     </div>
 </div>
