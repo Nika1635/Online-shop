@@ -10,6 +10,7 @@
                                 <div>
                                     <img class="cardImg" [src]="item.thumbnail" alt="">
                                     <p class="cardname">{{item.title}}</p>
+                                    <p class="rating">rating: {{item.rating}}</p>
                                     <div class="priceBar">
                                         @if (item.price.beforeDiscount > item.price.current) {
                                             <p class="beforeDiscount">${{item.price.beforeDiscount}}</p>
